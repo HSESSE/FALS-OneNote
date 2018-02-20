@@ -1,12 +1,13 @@
 package Entities;
 
+import Bank.Entity;
 
-public class CourseState {
+public class CourseState extends Entity {
 
-	public Module currentModule;
 	public Course course;
-	public int index;
+	public Module currentModule;
 	public Step currentStep;
+	public int index;
 	public Student student;
 
 	public CourseState(){
@@ -18,10 +19,11 @@ public class CourseState {
 	 * @param other
 	 */
 	public boolean hasChanged(CourseState other){
-		return this != other || (
-		    other != null &&
-		    this.course.equals(other.course) &&
-			this.currentModule.equals(other.currentModule));
+		return !super.equals(other) && !(
+			student.equals(other.student) &&
+		    course.equals(other.course) &&
+			currentModule.equals(other.currentModule) &&
+			currentStep.equals(other.currentStep));
 	}
 
 }

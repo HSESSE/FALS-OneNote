@@ -1,11 +1,12 @@
 package Entities;
 
+import Bank.Entity;
 
-public abstract class Step {
+public abstract class Step extends Entity {
 
-	public String resultType = "";
 	public int maxGrade;
 	public StepInterventionModel possibleInterventions[];
+	public String resultType;
 
 	public Step(){
 
