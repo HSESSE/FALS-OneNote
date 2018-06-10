@@ -2,14 +2,20 @@
 OneNote Office 365 AddIn for FALS
 
 # Prerequisites
-* Node.js 5.4+ (for 6+ modify package.json removing --harmony_default_parameters)
+* Node.js 6+ (tested on 8.11.1) with NPM (tested on 5.6.0)
 * Maven (optional, for java to ts generation, npm run gen)
 
 # Setup and run
 
+For localhost and browsersync:
+
 1) npm install
-2) npm run start
-3) npm run backend
+2) \[optional\] npm run gen
+3) npm run createStorage
+4) npm run start
+5) npm run backend
+
+For server setup a separate package.json, server.ts and possibly other files should be branched.
 
 # Office integration
 
