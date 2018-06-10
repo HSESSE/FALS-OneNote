@@ -1,22 +1,53 @@
-<div>
-    <label class="ms-Label">Dashboard</label>
-    <div class="ms-Breadcrumb">
-        <div class="ms-Breadcrumb-overflow">
-            <div class="ms-Breadcrumb-overflowButton ms-Icon ms-Icon--ellipsis" tabindex="1"></div>
-            <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight"></i>
-            <div class="ms-Breadcrumb-overflowMenu">
-                <ul class="ms-ContextualMenu is-open"></ul>
+<div class="ms-List">
+    <li class="ms-ListItem">
+        <div class="ms-Breadcrumb" style="max-width: 1px;">
+            <div class="ms-Breadcrumb-overflow">
+                <div class="ms-Breadcrumb-overflowButton ms-Icon ms-Icon--More" (click)="toggle()"></div>
+                <div class="ms-Breadcrumb-overflowMenu" [ngClass]="{'is-open':toggleMenu}">
+                    <ul class="ms-ContextualMenu">
+                    </ul>
+                </div>
+            </div>
+            <ul class="ms-Breadcrumb-list" style="display: contents;">
+                <li class="ms-Breadcrumb-listItem" *ngFor="let module of Modules;let i = index">
+                    <a class="ms-Breadcrumb-itemLink" tabindex="" [ngStyle]="{
+                'opacity': isCurrentModule(module) ? '1' : '0.6'
+            }">{{module.title}}</a>
+                    <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="courseDashboard-Callouts">
+            <div *ngFor="let module of Modules;let i = index" class="ms-Callout is-hidden ms-Callout--OOBE">
+                <div class="ms-Callout-main">
+                    <div class="ms-Callout-header">
+                        <p class="ms-Callout-title">{{module.title}}</p>
+                    </div>
+                    <div class="ms-Callout-inner">
+                        <div class="ms-Callout-content">
+                            <p class="ms-Callout-subText">{{module.description}}</p>
+                            <p class="ms-Callout-subText" style="color:mediumblue" *ngIf='isCurrentModule(module) && ((Course|async).unfinishedSteps) && ((Course|async).unfinishedSteps.findIndex(isPascaStep)>=0)'>Ожидается завершение взаимного оценивания</p>
+                            <p class="ms-Callout-subText">Оценка: {{grades[module.id]}}/{{module.maxGrade}}</p>
+                        </div>
+                        <div class="ms-Callout-actions">
+                            <div class="ms-CommandButton ms-CommandButton--inline">
+                                <button *ngIf="!isCurrentModule(module)" class="ms-CommandButton-button" (click)="OpenModule(module)">
+                                    <span class="ms-CommandButton-icon ms-fontColor-green">
+                                        <i class="ms-Icon ms-Icon--CheckMark"></i>
+                                    </span>
+                                    <span class="ms-CommandButton-label">Открыть секцию с материалами</span>
+                                </button>
+                                <button *ngIf="isCurrentModule(module)" class="ms-CommandButton-button" (click)="SelectModule(module, i)">
+                                    <span class="ms-CommandButton-icon ms-fontColor-green">
+                                        <i class="ms-Icon ms-Icon--ChevronRight"></i>
+                                    </span>
+                                    <span class="ms-CommandButton-label">Приступить</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <ul class="ms-Breadcrumb-list">
-            <li class="ms-Breadcrumb-listItem" *ngFor="let module of (Course|async)?.course?.modules?.Children; let i=index;">
-                <button class="ms-Button ms-Button--hero" tabindex="" [attr.disabled]="isCurrentModule(module)" ng-click="SelectModule()">Module {{i + 1}}</button>
-                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight"></i>
-            </li>
-        </ul>
-    </div>
-    <!-- <div *ngFor="let module of (Course|async)?.course?.modules?.Children; let i=index">
-        Module {{i}}
-        <course-dashboard-module [Module]="module"></course-dashboard-module>
-    </div> -->
+    </li>
 </div>

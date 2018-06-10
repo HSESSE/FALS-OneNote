@@ -1,29 +1,59 @@
 /* Auto-generated file */
 
 import { Period, Type } from "Service/Fals/TypeMap";
+// var dictProto: any = <any>{};
+// dictProto.__proto__.putIfAbsent = function(child, node) {
+//   this[child] = this[child] || node;
+// };
+import { Serialize } from "../Serialization/Serialize";
 import { Entity } from "../Bank/Entity";
-import { Course } from "./Course";
 import { Module } from "./Module";
+import { Course } from "./Course";
 import { Step } from "./Step";
 import { Student } from "./Student";
 export class CourseState extends Entity {
-  public course: Course;
+  static __static_initialized: boolean = false;
+  static __static_initialize() {
+    if (!CourseState.__static_initialized) {
+      CourseState.__static_initialized = true;
+      CourseState.__static_initializer_0();
+    }
+  }
 
   public currentModule: Module;
 
-  public currentStep: Step;
+  public course: Course;
 
   public index: number;
 
+  public currentStep: Step;
+
   public student: Student;
+
+  public unfinishedSteps: Array<Step> = <any>[];
+
+  public isCourseFinished: boolean;
+
+  public isModuleActive: boolean;
+
+  static __static_initializer_0() {
+    Serialize.declare(
+      /* getName */ (c => (c["__class"] ? c["__class"] : c["name"]))(
+        CourseState
+      ),
+      CourseState
+    );
+  }
 
   public constructor() {
     super();
-    this.course = null;
     this.currentModule = null;
-    this.currentStep = null;
+    this.course = null;
     this.index = 0;
+    this.currentStep = null;
     this.student = null;
+    this.isCourseFinished = false;
+    this.isModuleActive = false;
   }
 
   /**
@@ -44,3 +74,5 @@ export class CourseState extends Entity {
   }
 }
 CourseState["__class"] = "Entities.CourseState";
+
+CourseState.__static_initialize();

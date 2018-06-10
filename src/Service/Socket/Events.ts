@@ -17,3 +17,18 @@ export const SubmitModuleResult = "ModuleResult";
 export const SubmitStepResult = "StepResult";
 
 // Statistics
+
+// Interventions
+
+export const StepIntervene = "StepIntervene";
+export const ModuleIntervene = "ModuleIntervene";
+
+// Sub Test Changes
+
+export const ControlStepChanged = "ControlStepChanged";
+export const GeneratedTestChanged = "GeneratedTestChanged";
+
+// Grade
+
+export const GradeChanged = "GradeChanged";
+export const GetCurrentGrade = "GetCurrentGrade";

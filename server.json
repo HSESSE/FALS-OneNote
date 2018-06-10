@@ -13,1174 +13,2998 @@
     "0": {
       "Children": [
         {
-          "Children": null,
+          "Children": [],
+          "type": "Entities.Tree",
           "Value": {
-            "type": "class Module extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.maxGrade = 0;\r\n        this.possibleInterventions = null;\r\n        this.steps = null;\r\n    }\r\n}",
+            "type": "Entities.Module",
             "id": "module1",
             "version": null,
-            "maxGrade": 0,
-            "possibleInterventions": null,
             "steps": [
               {
-                "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
+                "type": "Entities.StudyStep",
+                "id": "step01",
+                "version": null,
+                "possibleInterventions": [],
+                "resultType": null,
+                "maxGrade": 0,
+                "title": null,
+                "materials": {
+                  "type": "Bank.HypertextMaterial",
+                  "id": null,
+                  "version": null,
+                  "content": "<div>Приветствуем Вас на курсе ПДД 2018. Надеемся, вы узнаете много нового.</div>"
+                }
+              },
+              {
+                "type": "Entities.StudyStep",
+                "id": "step02",
+                "version": null,
+                "possibleInterventions": [],
+                "resultType": null,
+                "maxGrade": 0,
+                "title": null,
+                "materials": {
+                  "type": "Bank.HyperlinkMaterial",
+                  "id": null,
+                  "version": null,
+                  "link": "https://pdde.ru/pdd/"
+                }
+              },
+              {
+                "type": "Entities.TestStep",
                 "id": "step1",
                 "version": null,
-                "maxGrade": 0,
                 "possibleInterventions": [
                   {
+                    "type": "Entities.Hint",
+                    "id": null,
+                    "version": null,
+                    "message": "Действие знака 4.1.1 «Движение прямо», установленного перед перекрёстком, распространяется только на первое пересечение проезжих частей за знаком."
+                  }
+                ],
+                "resultType": "function Number() { [native code] }",
+                "maxGrade": 1,
+                "title": null,
+                "problem": {
+                  "type": "Bank.Assignment",
+                  "id": null,
+                  "version": null,
+                  "content": "<div style=\"left:50px;top:75px;width:300px\">Вам можно продолжить движение на перекрёстке:\n  <img width=\"400px\" src=\"https://avto-russia.ru/pdd_abma1b1/images/pdd-15-02.jpg\"></img>\n  </div>"
+                },
+                "answers": [
+                  {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "В направлениях Б и В"
+                  },
+                  {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "Только в направлении Б"
+                  },
+                  {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "В направлениях А и Б"
+                  }
+                ],
+                "correctAnswer": 2
+              },
+              {
+                "type": "Entities.OpenTestStep",
+                "id": "step12",
+                "version": null,
+                "possibleInterventions": [
+                  {
+                    "type": "Entities.Distinction",
+                    "id": null,
+                    "version": null,
+                    "message": "Лампа красного цвета располагается сверху, лампа зелёного цвета располагается снизу",
+                    "entity1": "красный",
+                    "entity2": "зелёный",
+                    "distinctor": null
+                  },
+                  {
+                    "type": "Entities.Hint",
+                    "id": null,
+                    "version": null,
+                    "message": "Цвет светофора может быть одним из трёх: красный, жёлтый или зелёный"
+                  }
+                ],
+                "resultType": "function String() { [native code] }",
+                "maxGrade": 1,
+                "title": null,
+                "problem": {
+                  "type": "Bank.Assignment",
+                  "id": null,
+                  "version": null,
+                  "content": "Какой цвет светофора требует остановки?"
+                },
+                "correctAnswer": {
+                  "type": "Bank.Key",
+                  "id": null,
+                  "version": null,
+                  "value": "красный"
+                }
+              },
+              {
+                "type": "Entities.StudyStep",
+                "id": "step2",
+                "version": null,
+                "possibleInterventions": [
+                  {
+                    "type": "Entities.GotoStepIntervention",
+                    "id": null,
+                    "version": null,
                     "step": {
-                      "type": "class ControlStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.exercises = null;\r\n    }\r\n    getGrade() {\r\n        return 0;\r\n    }\r\n}",
+                      "type": "Entities.ControlStep",
                       "id": "step3",
                       "version": null,
-                      "maxGrade": 0,
-                      "possibleInterventions": null,
+                      "possibleInterventions": [],
                       "resultType": null,
+                      "maxGrade": 3,
+                      "title": null,
                       "exercises": [
                         {
-                          "type": "class TestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.answers = null;\r\n        this.correctAnswer = 0;\r\n        this.resultType = Number.toString();\r\n    }\r\n}",
+                          "type": "Entities.OpenTestStep",
                           "id": "exercise1",
                           "version": null,
-                          "maxGrade": 5,
-                          "possibleInterventions": null,
-                          "resultType": "function Number() { [native code] }",
-                          "problem": {
-                            "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                            "id": null,
-                            "version": null,
-                            "content": "2 + 2 = ?"
-                          },
-                          "answers": [
-                            {
-                              "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                              "id": null,
-                              "version": null,
-                              "value": "2"
-                            },
-                            {
-                              "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                              "id": null,
-                              "version": null,
-                              "value": "3"
-                            },
-                            {
-                              "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                              "id": null,
-                              "version": null,
-                              "value": "4"
-                            },
-                            {
-                              "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                              "id": null,
-                              "version": null,
-                              "value": "5"
-                            }
-                          ],
-                          "correctAnswer": 3
-                        },
-                        {
-                          "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-                          "id": "exercise2",
-                          "version": null,
-                          "maxGrade": 15,
-                          "possibleInterventions": null,
+                          "possibleInterventions": [],
                           "resultType": "function String() { [native code] }",
+                          "maxGrade": 2,
+                          "title": null,
                           "problem": {
-                            "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                            "type": "Bank.Assignment",
                             "id": null,
                             "version": null,
-                            "content": "3 + 3 = ?"
+                            "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
                           },
                           "correctAnswer": {
-                            "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                            "type": "Bank.Key",
                             "id": null,
                             "version": null,
-                            "value": "6"
+                            "value": "категория"
                           }
+                        },
+                        {
+                          "type": "Entities.GeneratedTestStep",
+                          "id": "exercise2",
+                          "version": null,
+                          "possibleInterventions": [],
+                          "resultType": null,
+                          "maxGrade": 1,
+                          "title": null,
+                          "objects": [
+                            "Категория А",
+                            "Категория А1",
+                            "Категория В",
+                            "Категория В1",
+                            "Категория ВЕ"
+                          ],
+                          "batchSize": 5,
+                          "question_type": 0,
+                          "question_form": 1,
+                          "features": [
+                            "Тип ТС",
+                            "Максимальная масса ТС",
+                            "Минимальный возраст"
+                          ],
+                          "minGrade": 0.7
                         }
                       ]
                     }
                   }
                 ],
-                "resultType": "function String() { [native code] }",
-                "problem": {
-                  "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                  "id": null,
-                  "version": null,
-                  "content": "How much watch?"
-                },
-                "correctAnswer": {
-                  "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                  "id": null,
-                  "version": null,
-                  "value": "Whom how"
-                }
-              },
-              {
-                "type": "class StudyStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.materials = null;\r\n    }\r\n}",
-                "id": "step2",
-                "version": null,
-                "maxGrade": 0,
-                "possibleInterventions": null,
                 "resultType": null,
+                "maxGrade": 0,
+                "title": "Изучение светофора",
                 "materials": {
-                  "type": "class HypertextMaterial extends Material_1.Material {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                  "type": "Bank.HypertextMaterial",
                   "id": null,
                   "version": null,
-                  "content": "<div>Material1.Content Image!<img source=\"https://www.google.ru/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png\"></img></div>"
+                  "content": "<div style=\"left:50px;top:75px;width:300px\">Светофо́р (от свет + греч. φορός «несущий») — оптическое устройство, подающее световые сигналы, регулирующие движение автомобильного, железнодорожного, водного и другого транспорта, а также пешеходов на пешеходных переходах\n    <img width=\"400px\" src=\"https://ds03.infourok.ru/uploads/ex/07e6/0005ad35-95e22fd3/1/img1.jpg\"></img></div>"
                 }
               },
               {
-                "type": "class ControlStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.exercises = null;\r\n    }\r\n    getGrade() {\r\n        return 0;\r\n    }\r\n}",
+                "type": "Entities.ControlStep",
                 "id": "step3",
                 "version": null,
-                "maxGrade": 0,
-                "possibleInterventions": null,
+                "possibleInterventions": [],
                 "resultType": null,
+                "maxGrade": 3,
+                "title": null,
                 "exercises": [
                   {
-                    "type": "class TestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.answers = null;\r\n        this.correctAnswer = 0;\r\n        this.resultType = Number.toString();\r\n    }\r\n}",
+                    "type": "Entities.OpenTestStep",
                     "id": "exercise1",
                     "version": null,
-                    "maxGrade": 5,
-                    "possibleInterventions": null,
-                    "resultType": "function Number() { [native code] }",
-                    "problem": {
-                      "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                      "id": null,
-                      "version": null,
-                      "content": "2 + 2 = ?"
-                    },
-                    "answers": [
-                      {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                        "id": null,
-                        "version": null,
-                        "value": "2"
-                      },
-                      {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                        "id": null,
-                        "version": null,
-                        "value": "3"
-                      },
-                      {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                        "id": null,
-                        "version": null,
-                        "value": "4"
-                      },
-                      {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                        "id": null,
-                        "version": null,
-                        "value": "5"
-                      }
-                    ],
-                    "correctAnswer": 3
-                  },
-                  {
-                    "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-                    "id": "exercise2",
-                    "version": null,
-                    "maxGrade": 15,
-                    "possibleInterventions": null,
+                    "possibleInterventions": [],
                     "resultType": "function String() { [native code] }",
+                    "maxGrade": 2,
+                    "title": null,
                     "problem": {
-                      "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                      "type": "Bank.Assignment",
                       "id": null,
                       "version": null,
-                      "content": "3 + 3 = ?"
+                      "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
                     },
                     "correctAnswer": {
-                      "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                      "type": "Bank.Key",
                       "id": null,
                       "version": null,
-                      "value": "6"
+                      "value": "категория"
                     }
+                  },
+                  {
+                    "type": "Entities.GeneratedTestStep",
+                    "id": "exercise2",
+                    "version": null,
+                    "possibleInterventions": [],
+                    "resultType": null,
+                    "maxGrade": 1,
+                    "title": null,
+                    "objects": [
+                      "Категория А",
+                      "Категория А1",
+                      "Категория В",
+                      "Категория В1",
+                      "Категория ВЕ"
+                    ],
+                    "batchSize": 5,
+                    "question_type": 0,
+                    "question_form": 1,
+                    "features": [
+                      "Тип ТС",
+                      "Максимальная масса ТС",
+                      "Минимальный возраст"
+                    ],
+                    "minGrade": 0.7
                   }
                 ]
               }
-            ]
+            ],
+            "maxGrade": 5,
+            "minGrade": 3,
+            "possibleInterventions": [
+              {
+                "type": "Entities.RepeatIntervention",
+                "id": null,
+                "version": null
+              }
+            ],
+            "title": "Основы ПДД",
+            "description": "В этом модуле вы пройдете первые шаги в изучении ПДД"
           }
         },
         {
-          "Children": null,
+          "Children": [],
+          "type": "Entities.Tree",
           "Value": {
-            "type": "class Module extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.maxGrade = 0;\r\n        this.possibleInterventions = null;\r\n        this.steps = null;\r\n    }\r\n}",
+            "type": "Entities.Module",
             "id": "module2",
             "version": null,
-            "maxGrade": 0,
-            "possibleInterventions": null,
             "steps": [
               {
-                "type": "class ControlStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.exercises = null;\r\n    }\r\n    getGrade() {\r\n        return 0;\r\n    }\r\n}",
+                "type": "Entities.TestStep",
                 "id": "step21",
                 "version": null,
-                "maxGrade": 0,
-                "possibleInterventions": null,
-                "resultType": null,
-                "exercises": [
+                "possibleInterventions": [],
+                "resultType": "function Number() { [native code] }",
+                "maxGrade": 1,
+                "title": null,
+                "problem": {
+                  "type": "Bank.Assignment",
+                  "id": null,
+                  "version": null,
+                  "content": "Вспомним пройденное. Сколько цветов у светофора?"
+                },
+                "answers": [
                   {
-                    "type": "class TestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.answers = null;\r\n        this.correctAnswer = 0;\r\n        this.resultType = Number.toString();\r\n    }\r\n}",
-                    "id": "exercise1",
+                    "type": "Bank.Key",
+                    "id": null,
                     "version": null,
-                    "maxGrade": 5,
-                    "possibleInterventions": null,
-                    "resultType": "function Number() { [native code] }",
-                    "problem": {
-                      "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                      "id": null,
-                      "version": null,
-                      "content": "2 + 2 = ?"
-                    },
-                    "answers": [
-                      {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                        "id": null,
-                        "version": null,
-                        "value": "2"
-                      },
-                      {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                        "id": null,
-                        "version": null,
-                        "value": "3"
-                      },
-                      {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                        "id": null,
-                        "version": null,
-                        "value": "4"
-                      },
-                      {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                        "id": null,
-                        "version": null,
-                        "value": "5"
-                      }
-                    ],
-                    "correctAnswer": 3
+                    "value": "1"
                   },
                   {
-                    "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-                    "id": "exercise2",
+                    "type": "Bank.Key",
+                    "id": null,
                     "version": null,
-                    "maxGrade": 15,
-                    "possibleInterventions": null,
+                    "value": "2"
+                  },
+                  {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "3"
+                  },
+                  {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "4"
+                  }
+                ],
+                "correctAnswer": 2
+              },
+              {
+                "type": "Entities.StudyStep",
+                "id": "step22",
+                "version": null,
+                "possibleInterventions": [],
+                "resultType": null,
+                "maxGrade": 0,
+                "title": null,
+                "materials": {
+                  "type": "Bank.HyperlinkMaterial",
+                  "id": null,
+                  "version": null,
+                  "link": "onenote:https://eduhseru-my.sharepoint.com/personal/aikolomiets_edu_hse_ru/Documents/Записные%20книжки%20для%20занятий/Testroom/_Библиотека%20содержимого/SectionGroup5/Т6.one#О%20светофорах%20Т.6&section-id={CAA62863-22AA-46F0-8DC9-0D89F4903618}&page-id={5C461093-D883-4458-83F2-BEAAAE5369C7}&end"
+                }
+              },
+              {
+                "type": "Entities.OpenTestStep",
+                "id": "step23",
+                "version": null,
+                "possibleInterventions": [],
+                "resultType": "function String() { [native code] }",
+                "maxGrade": 1,
+                "title": null,
+                "problem": {
+                  "type": "Bank.Assignment",
+                  "id": null,
+                  "version": null,
+                  "content": "<div style=\"left:50px;top:75px;width:250px\">Какой тип светофора изображен на рисунке?\n<img width=\"200px\" src=\"https://i.imgur.com/pGpZhvL.jpg\"></img>\n</div>"
+                },
+                "correctAnswer": {
+                  "type": "Bank.Key",
+                  "id": null,
+                  "version": null,
+                  "value": "транспортный"
+                }
+              },
+              {
+                "type": "Entities.TestStep",
+                "id": "step24",
+                "version": null,
+                "possibleInterventions": [],
+                "resultType": "function Number() { [native code] }",
+                "maxGrade": 2,
+                "title": null,
+                "problem": {
+                  "type": "Bank.Assignment",
+                  "id": null,
+                  "version": null,
+                  "content": "В местах, где движение регулируется, пешеходы должны руководствоваться в первую очередь сигналами "
+                },
+                "answers": [
+                  {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "регулировщика"
+                  },
+                  {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "транспортного светофора"
+                  },
+                  {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "пешеходного светофора"
+                  }
+                ],
+                "correctAnswer": 0
+              },
+              {
+                "type": "Entities.ControlStep",
+                "id": "step25",
+                "version": null,
+                "possibleInterventions": [],
+                "resultType": null,
+                "maxGrade": 6,
+                "title": null,
+                "exercises": [
+                  {
+                    "type": "Entities.OpenTestStep",
+                    "id": "exercise21",
+                    "version": null,
+                    "possibleInterventions": [],
                     "resultType": "function String() { [native code] }",
+                    "maxGrade": 1,
+                    "title": null,
                     "problem": {
-                      "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                      "type": "Bank.Assignment",
                       "id": null,
                       "version": null,
-                      "content": "3 + 3 = ?"
+                      "content": "<div style=\"left:50px;top:75px;width:300px\">1. Светофор какого типа изображен на рисунке?\n  <img width=\"250\" src=\"https://arhivurokov.ru/multiurok/1/7/d/17dc7de6d066e259ca97319fa0183bc996409fa6/bukliet-pravila-dorozhnogho-dvizhieniia-v-zimnii-p_14.jpeg\"></img>\n  </div>"
                     },
                     "correctAnswer": {
-                      "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                      "type": "Bank.Key",
                       "id": null,
                       "version": null,
-                      "value": "6"
+                      "value": "Т.5"
+                    }
+                  },
+                  {
+                    "type": "Entities.PascaStep",
+                    "id": "exercise22",
+                    "version": null,
+                    "possibleInterventions": [],
+                    "resultType": "class PascaStepResult {\r\n    constructor() {\r\n        this.ArtifactUri = null;\r\n        this.FinalGrade = 0;\r\n        this.Grades = null;\r\n        this.Reviewers = null;\r\n    }\r\n}",
+                    "maxGrade": 5,
+                    "title": null,
+                    "pascaFalsSettings": {
+                      "authorsCountToBeginAssessment": 2,
+                      "delayDates": true
+                    },
+                    "pascaSessionSettings": {
+                      "sessionName": "Проект Светофоры"
+                    },
+                    "pascaOnenoteSettings": {
+                      "pascaSectionGroupName": "PASCA",
+                      "assignmentSectionName": "Assignment"
                     }
                   }
                 ]
               }
-            ]
-          }
-        }
-      ],
-      "Value": null
-    },
-    "1": {
-      "Children": null,
-      "Value": {
-        "type": "class Module extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.maxGrade = 0;\r\n        this.possibleInterventions = null;\r\n        this.steps = null;\r\n    }\r\n}",
-        "id": "module1",
-        "version": null,
-        "maxGrade": 0,
-        "possibleInterventions": null,
-        "steps": [
-          {
-            "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-            "id": "step1",
-            "version": null,
-            "maxGrade": 0,
+            ],
+            "maxGrade": 10,
+            "minGrade": 5,
             "possibleInterventions": [
               {
-                "step": {
-                  "type": "class ControlStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.exercises = null;\r\n    }\r\n    getGrade() {\r\n        return 0;\r\n    }\r\n}",
-                  "id": "step3",
+                "type": "Entities.GotoModuleIntervention",
+                "id": null,
+                "version": null,
+                "module": {
+                  "type": "Entities.Module",
+                  "id": "module1",
                   "version": null,
-                  "maxGrade": 0,
-                  "possibleInterventions": null,
-                  "resultType": null,
-                  "exercises": [
+                  "steps": [
                     {
-                      "type": "class TestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.answers = null;\r\n        this.correctAnswer = 0;\r\n        this.resultType = Number.toString();\r\n    }\r\n}",
-                      "id": "exercise1",
+                      "type": "Entities.StudyStep",
+                      "id": "step01",
                       "version": null,
-                      "maxGrade": 5,
-                      "possibleInterventions": null,
-                      "resultType": "function Number() { [native code] }",
-                      "problem": {
-                        "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                      "possibleInterventions": [],
+                      "resultType": null,
+                      "maxGrade": 0,
+                      "title": null,
+                      "materials": {
+                        "type": "Bank.HypertextMaterial",
                         "id": null,
                         "version": null,
-                        "content": "2 + 2 = ?"
+                        "content": "<div>Приветствуем Вас на курсе ПДД 2018. Надеемся, вы узнаете много нового.</div>"
+                      }
+                    },
+                    {
+                      "type": "Entities.StudyStep",
+                      "id": "step02",
+                      "version": null,
+                      "possibleInterventions": [],
+                      "resultType": null,
+                      "maxGrade": 0,
+                      "title": null,
+                      "materials": {
+                        "type": "Bank.HyperlinkMaterial",
+                        "id": null,
+                        "version": null,
+                        "link": "https://pdde.ru/pdd/"
+                      }
+                    },
+                    {
+                      "type": "Entities.TestStep",
+                      "id": "step1",
+                      "version": null,
+                      "possibleInterventions": [
+                        {
+                          "type": "Entities.Hint",
+                          "id": null,
+                          "version": null,
+                          "message": "Действие знака 4.1.1 «Движение прямо», установленного перед перекрёстком, распространяется только на первое пересечение проезжих частей за знаком."
+                        }
+                      ],
+                      "resultType": "function Number() { [native code] }",
+                      "maxGrade": 1,
+                      "title": null,
+                      "problem": {
+                        "type": "Bank.Assignment",
+                        "id": null,
+                        "version": null,
+                        "content": "<div style=\"left:50px;top:75px;width:300px\">Вам можно продолжить движение на перекрёстке:\n  <img width=\"400px\" src=\"https://avto-russia.ru/pdd_abma1b1/images/pdd-15-02.jpg\"></img>\n  </div>"
                       },
                       "answers": [
                         {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                          "type": "Bank.Key",
                           "id": null,
                           "version": null,
-                          "value": "2"
+                          "value": "В направлениях Б и В"
                         },
                         {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                          "type": "Bank.Key",
                           "id": null,
                           "version": null,
-                          "value": "3"
+                          "value": "Только в направлении Б"
                         },
                         {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                          "type": "Bank.Key",
                           "id": null,
                           "version": null,
-                          "value": "4"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "5"
+                          "value": "В направлениях А и Б"
                         }
                       ],
-                      "correctAnswer": 3
+                      "correctAnswer": 2
                     },
                     {
-                      "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-                      "id": "exercise2",
+                      "type": "Entities.OpenTestStep",
+                      "id": "step12",
                       "version": null,
-                      "maxGrade": 15,
-                      "possibleInterventions": null,
+                      "possibleInterventions": [
+                        {
+                          "type": "Entities.Distinction",
+                          "id": null,
+                          "version": null,
+                          "message": "Лампа красного цвета располагается сверху, лампа зелёного цвета располагается снизу",
+                          "entity1": "красный",
+                          "entity2": "зелёный",
+                          "distinctor": null
+                        },
+                        {
+                          "type": "Entities.Hint",
+                          "id": null,
+                          "version": null,
+                          "message": "Цвет светофора может быть одним из трёх: красный, жёлтый или зелёный"
+                        }
+                      ],
                       "resultType": "function String() { [native code] }",
+                      "maxGrade": 1,
+                      "title": null,
                       "problem": {
-                        "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                        "type": "Bank.Assignment",
                         "id": null,
                         "version": null,
-                        "content": "3 + 3 = ?"
+                        "content": "Какой цвет светофора требует остановки?"
                       },
                       "correctAnswer": {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                        "type": "Bank.Key",
                         "id": null,
                         "version": null,
-                        "value": "6"
+                        "value": "красный"
                       }
+                    },
+                    {
+                      "type": "Entities.StudyStep",
+                      "id": "step2",
+                      "version": null,
+                      "possibleInterventions": [
+                        {
+                          "type": "Entities.GotoStepIntervention",
+                          "id": null,
+                          "version": null,
+                          "step": {
+                            "type": "Entities.ControlStep",
+                            "id": "step3",
+                            "version": null,
+                            "possibleInterventions": [],
+                            "resultType": null,
+                            "maxGrade": 3,
+                            "title": null,
+                            "exercises": [
+                              {
+                                "type": "Entities.OpenTestStep",
+                                "id": "exercise1",
+                                "version": null,
+                                "possibleInterventions": [],
+                                "resultType": "function String() { [native code] }",
+                                "maxGrade": 2,
+                                "title": null,
+                                "problem": {
+                                  "type": "Bank.Assignment",
+                                  "id": null,
+                                  "version": null,
+                                  "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
+                                },
+                                "correctAnswer": {
+                                  "type": "Bank.Key",
+                                  "id": null,
+                                  "version": null,
+                                  "value": "категория"
+                                }
+                              },
+                              {
+                                "type": "Entities.GeneratedTestStep",
+                                "id": "exercise2",
+                                "version": null,
+                                "possibleInterventions": [],
+                                "resultType": null,
+                                "maxGrade": 1,
+                                "title": null,
+                                "objects": [
+                                  "Категория А",
+                                  "Категория А1",
+                                  "Категория В",
+                                  "Категория В1",
+                                  "Категория ВЕ"
+                                ],
+                                "batchSize": 5,
+                                "question_type": 0,
+                                "question_form": 1,
+                                "features": [
+                                  "Тип ТС",
+                                  "Максимальная масса ТС",
+                                  "Минимальный возраст"
+                                ],
+                                "minGrade": 0.7
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "resultType": null,
+                      "maxGrade": 0,
+                      "title": "Изучение светофора",
+                      "materials": {
+                        "type": "Bank.HypertextMaterial",
+                        "id": null,
+                        "version": null,
+                        "content": "<div style=\"left:50px;top:75px;width:300px\">Светофо́р (от свет + греч. φορός «несущий») — оптическое устройство, подающее световые сигналы, регулирующие движение автомобильного, железнодорожного, водного и другого транспорта, а также пешеходов на пешеходных переходах\n    <img width=\"400px\" src=\"https://ds03.infourok.ru/uploads/ex/07e6/0005ad35-95e22fd3/1/img1.jpg\"></img></div>"
+                      }
+                    },
+                    {
+                      "type": "Entities.ControlStep",
+                      "id": "step3",
+                      "version": null,
+                      "possibleInterventions": [],
+                      "resultType": null,
+                      "maxGrade": 3,
+                      "title": null,
+                      "exercises": [
+                        {
+                          "type": "Entities.OpenTestStep",
+                          "id": "exercise1",
+                          "version": null,
+                          "possibleInterventions": [],
+                          "resultType": "function String() { [native code] }",
+                          "maxGrade": 2,
+                          "title": null,
+                          "problem": {
+                            "type": "Bank.Assignment",
+                            "id": null,
+                            "version": null,
+                            "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
+                          },
+                          "correctAnswer": {
+                            "type": "Bank.Key",
+                            "id": null,
+                            "version": null,
+                            "value": "категория"
+                          }
+                        },
+                        {
+                          "type": "Entities.GeneratedTestStep",
+                          "id": "exercise2",
+                          "version": null,
+                          "possibleInterventions": [],
+                          "resultType": null,
+                          "maxGrade": 1,
+                          "title": null,
+                          "objects": [
+                            "Категория А",
+                            "Категория А1",
+                            "Категория В",
+                            "Категория В1",
+                            "Категория ВЕ"
+                          ],
+                          "batchSize": 5,
+                          "question_type": 0,
+                          "question_form": 1,
+                          "features": [
+                            "Тип ТС",
+                            "Максимальная масса ТС",
+                            "Минимальный возраст"
+                          ],
+                          "minGrade": 0.7
+                        }
+                      ]
+                    }
+                  ],
+                  "maxGrade": 5,
+                  "minGrade": 3,
+                  "possibleInterventions": [
+                    {
+                      "type": "Entities.RepeatIntervention",
+                      "id": null,
+                      "version": null
+                    }
+                  ],
+                  "title": "Основы ПДД",
+                  "description": "В этом модуле вы пройдете первые шаги в изучении ПДД"
+                }
+              }
+            ],
+            "title": "Светофоры",
+            "description": "Детальное изучение светофоров"
+          }
+        }
+      ],
+      "type": "Entities.Tree",
+      "Value": null
+    },
+    "1": {
+      "Children": [],
+      "type": "Entities.Tree",
+      "Value": {
+        "type": "Entities.Module",
+        "id": "module1",
+        "version": null,
+        "steps": [
+          {
+            "type": "Entities.StudyStep",
+            "id": "step01",
+            "version": null,
+            "possibleInterventions": [],
+            "resultType": null,
+            "maxGrade": 0,
+            "title": null,
+            "materials": {
+              "type": "Bank.HypertextMaterial",
+              "id": null,
+              "version": null,
+              "content": "<div>Приветствуем Вас на курсе ПДД 2018. Надеемся, вы узнаете много нового.</div>"
+            }
+          },
+          {
+            "type": "Entities.StudyStep",
+            "id": "step02",
+            "version": null,
+            "possibleInterventions": [],
+            "resultType": null,
+            "maxGrade": 0,
+            "title": null,
+            "materials": {
+              "type": "Bank.HyperlinkMaterial",
+              "id": null,
+              "version": null,
+              "link": "https://pdde.ru/pdd/"
+            }
+          },
+          {
+            "type": "Entities.TestStep",
+            "id": "step1",
+            "version": null,
+            "possibleInterventions": [
+              {
+                "type": "Entities.Hint",
+                "id": null,
+                "version": null,
+                "message": "Действие знака 4.1.1 «Движение прямо», установленного перед перекрёстком, распространяется только на первое пересечение проезжих частей за знаком."
+              }
+            ],
+            "resultType": "function Number() { [native code] }",
+            "maxGrade": 1,
+            "title": null,
+            "problem": {
+              "type": "Bank.Assignment",
+              "id": null,
+              "version": null,
+              "content": "<div style=\"left:50px;top:75px;width:300px\">Вам можно продолжить движение на перекрёстке:\n  <img width=\"400px\" src=\"https://avto-russia.ru/pdd_abma1b1/images/pdd-15-02.jpg\"></img>\n  </div>"
+            },
+            "answers": [
+              {
+                "type": "Bank.Key",
+                "id": null,
+                "version": null,
+                "value": "В направлениях Б и В"
+              },
+              {
+                "type": "Bank.Key",
+                "id": null,
+                "version": null,
+                "value": "Только в направлении Б"
+              },
+              {
+                "type": "Bank.Key",
+                "id": null,
+                "version": null,
+                "value": "В направлениях А и Б"
+              }
+            ],
+            "correctAnswer": 2
+          },
+          {
+            "type": "Entities.OpenTestStep",
+            "id": "step12",
+            "version": null,
+            "possibleInterventions": [
+              {
+                "type": "Entities.Distinction",
+                "id": null,
+                "version": null,
+                "message": "Лампа красного цвета располагается сверху, лампа зелёного цвета располагается снизу",
+                "entity1": "красный",
+                "entity2": "зелёный",
+                "distinctor": null
+              },
+              {
+                "type": "Entities.Hint",
+                "id": null,
+                "version": null,
+                "message": "Цвет светофора может быть одним из трёх: красный, жёлтый или зелёный"
+              }
+            ],
+            "resultType": "function String() { [native code] }",
+            "maxGrade": 1,
+            "title": null,
+            "problem": {
+              "type": "Bank.Assignment",
+              "id": null,
+              "version": null,
+              "content": "Какой цвет светофора требует остановки?"
+            },
+            "correctAnswer": {
+              "type": "Bank.Key",
+              "id": null,
+              "version": null,
+              "value": "красный"
+            }
+          },
+          {
+            "type": "Entities.StudyStep",
+            "id": "step2",
+            "version": null,
+            "possibleInterventions": [
+              {
+                "type": "Entities.GotoStepIntervention",
+                "id": null,
+                "version": null,
+                "step": {
+                  "type": "Entities.ControlStep",
+                  "id": "step3",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": null,
+                  "maxGrade": 3,
+                  "title": null,
+                  "exercises": [
+                    {
+                      "type": "Entities.OpenTestStep",
+                      "id": "exercise1",
+                      "version": null,
+                      "possibleInterventions": [],
+                      "resultType": "function String() { [native code] }",
+                      "maxGrade": 2,
+                      "title": null,
+                      "problem": {
+                        "type": "Bank.Assignment",
+                        "id": null,
+                        "version": null,
+                        "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
+                      },
+                      "correctAnswer": {
+                        "type": "Bank.Key",
+                        "id": null,
+                        "version": null,
+                        "value": "категория"
+                      }
+                    },
+                    {
+                      "type": "Entities.GeneratedTestStep",
+                      "id": "exercise2",
+                      "version": null,
+                      "possibleInterventions": [],
+                      "resultType": null,
+                      "maxGrade": 1,
+                      "title": null,
+                      "objects": [
+                        "Категория А",
+                        "Категория А1",
+                        "Категория В",
+                        "Категория В1",
+                        "Категория ВЕ"
+                      ],
+                      "batchSize": 5,
+                      "question_type": 0,
+                      "question_form": 1,
+                      "features": [
+                        "Тип ТС",
+                        "Максимальная масса ТС",
+                        "Минимальный возраст"
+                      ],
+                      "minGrade": 0.7
                     }
                   ]
                 }
               }
             ],
-            "resultType": "function String() { [native code] }",
-            "problem": {
-              "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-              "id": null,
-              "version": null,
-              "content": "How much watch?"
-            },
-            "correctAnswer": {
-              "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-              "id": null,
-              "version": null,
-              "value": "Whom how"
-            }
-          },
-          {
-            "type": "class StudyStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.materials = null;\r\n    }\r\n}",
-            "id": "step2",
-            "version": null,
-            "maxGrade": 0,
-            "possibleInterventions": null,
             "resultType": null,
+            "maxGrade": 0,
+            "title": "Изучение светофора",
             "materials": {
-              "type": "class HypertextMaterial extends Material_1.Material {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+              "type": "Bank.HypertextMaterial",
               "id": null,
               "version": null,
-              "content": "<div>Material1.Content Image!<img source=\"https://www.google.ru/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png\"></img></div>"
+              "content": "<div style=\"left:50px;top:75px;width:300px\">Светофо́р (от свет + греч. φορός «несущий») — оптическое устройство, подающее световые сигналы, регулирующие движение автомобильного, железнодорожного, водного и другого транспорта, а также пешеходов на пешеходных переходах\n    <img width=\"400px\" src=\"https://ds03.infourok.ru/uploads/ex/07e6/0005ad35-95e22fd3/1/img1.jpg\"></img></div>"
             }
           },
           {
-            "type": "class ControlStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.exercises = null;\r\n    }\r\n    getGrade() {\r\n        return 0;\r\n    }\r\n}",
+            "type": "Entities.ControlStep",
             "id": "step3",
             "version": null,
-            "maxGrade": 0,
-            "possibleInterventions": null,
+            "possibleInterventions": [],
             "resultType": null,
+            "maxGrade": 3,
+            "title": null,
             "exercises": [
               {
-                "type": "class TestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.answers = null;\r\n        this.correctAnswer = 0;\r\n        this.resultType = Number.toString();\r\n    }\r\n}",
+                "type": "Entities.OpenTestStep",
                 "id": "exercise1",
                 "version": null,
-                "maxGrade": 5,
-                "possibleInterventions": null,
-                "resultType": "function Number() { [native code] }",
-                "problem": {
-                  "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                  "id": null,
-                  "version": null,
-                  "content": "2 + 2 = ?"
-                },
-                "answers": [
-                  {
-                    "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                    "id": null,
-                    "version": null,
-                    "value": "2"
-                  },
-                  {
-                    "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                    "id": null,
-                    "version": null,
-                    "value": "3"
-                  },
-                  {
-                    "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                    "id": null,
-                    "version": null,
-                    "value": "4"
-                  },
-                  {
-                    "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                    "id": null,
-                    "version": null,
-                    "value": "5"
-                  }
-                ],
-                "correctAnswer": 3
-              },
-              {
-                "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-                "id": "exercise2",
-                "version": null,
-                "maxGrade": 15,
-                "possibleInterventions": null,
+                "possibleInterventions": [],
                 "resultType": "function String() { [native code] }",
+                "maxGrade": 2,
+                "title": null,
                 "problem": {
-                  "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                  "type": "Bank.Assignment",
                   "id": null,
                   "version": null,
-                  "content": "3 + 3 = ?"
+                  "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
                 },
                 "correctAnswer": {
-                  "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                  "type": "Bank.Key",
                   "id": null,
                   "version": null,
-                  "value": "6"
+                  "value": "категория"
                 }
+              },
+              {
+                "type": "Entities.GeneratedTestStep",
+                "id": "exercise2",
+                "version": null,
+                "possibleInterventions": [],
+                "resultType": null,
+                "maxGrade": 1,
+                "title": null,
+                "objects": [
+                  "Категория А",
+                  "Категория А1",
+                  "Категория В",
+                  "Категория В1",
+                  "Категория ВЕ"
+                ],
+                "batchSize": 5,
+                "question_type": 0,
+                "question_form": 1,
+                "features": [
+                  "Тип ТС",
+                  "Максимальная масса ТС",
+                  "Минимальный возраст"
+                ],
+                "minGrade": 0.7
               }
             ]
           }
-        ]
+        ],
+        "maxGrade": 5,
+        "minGrade": 3,
+        "possibleInterventions": [
+          {
+            "type": "Entities.RepeatIntervention",
+            "id": null,
+            "version": null
+          }
+        ],
+        "title": "Основы ПДД",
+        "description": "В этом модуле вы пройдете первые шаги в изучении ПДД"
       }
     },
     "2": {
-      "Children": null,
+      "Children": [],
+      "type": "Entities.Tree",
       "Value": {
-        "type": "class Module extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.maxGrade = 0;\r\n        this.possibleInterventions = null;\r\n        this.steps = null;\r\n    }\r\n}",
+        "type": "Entities.Module",
         "id": "module2",
         "version": null,
-        "maxGrade": 0,
-        "possibleInterventions": null,
         "steps": [
           {
-            "type": "class ControlStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.exercises = null;\r\n    }\r\n    getGrade() {\r\n        return 0;\r\n    }\r\n}",
+            "type": "Entities.TestStep",
             "id": "step21",
             "version": null,
-            "maxGrade": 0,
-            "possibleInterventions": null,
-            "resultType": null,
-            "exercises": [
+            "possibleInterventions": [],
+            "resultType": "function Number() { [native code] }",
+            "maxGrade": 1,
+            "title": null,
+            "problem": {
+              "type": "Bank.Assignment",
+              "id": null,
+              "version": null,
+              "content": "Вспомним пройденное. Сколько цветов у светофора?"
+            },
+            "answers": [
               {
-                "type": "class TestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.answers = null;\r\n        this.correctAnswer = 0;\r\n        this.resultType = Number.toString();\r\n    }\r\n}",
-                "id": "exercise1",
+                "type": "Bank.Key",
+                "id": null,
                 "version": null,
-                "maxGrade": 5,
-                "possibleInterventions": null,
-                "resultType": "function Number() { [native code] }",
-                "problem": {
-                  "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                  "id": null,
-                  "version": null,
-                  "content": "2 + 2 = ?"
-                },
-                "answers": [
-                  {
-                    "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                    "id": null,
-                    "version": null,
-                    "value": "2"
-                  },
-                  {
-                    "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                    "id": null,
-                    "version": null,
-                    "value": "3"
-                  },
-                  {
-                    "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                    "id": null,
-                    "version": null,
-                    "value": "4"
-                  },
-                  {
-                    "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                    "id": null,
-                    "version": null,
-                    "value": "5"
-                  }
-                ],
-                "correctAnswer": 3
+                "value": "1"
               },
               {
-                "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-                "id": "exercise2",
+                "type": "Bank.Key",
+                "id": null,
                 "version": null,
-                "maxGrade": 15,
-                "possibleInterventions": null,
+                "value": "2"
+              },
+              {
+                "type": "Bank.Key",
+                "id": null,
+                "version": null,
+                "value": "3"
+              },
+              {
+                "type": "Bank.Key",
+                "id": null,
+                "version": null,
+                "value": "4"
+              }
+            ],
+            "correctAnswer": 2
+          },
+          {
+            "type": "Entities.StudyStep",
+            "id": "step22",
+            "version": null,
+            "possibleInterventions": [],
+            "resultType": null,
+            "maxGrade": 0,
+            "title": null,
+            "materials": {
+              "type": "Bank.HyperlinkMaterial",
+              "id": null,
+              "version": null,
+              "link": "onenote:https://eduhseru-my.sharepoint.com/personal/aikolomiets_edu_hse_ru/Documents/Записные%20книжки%20для%20занятий/Testroom/_Библиотека%20содержимого/SectionGroup5/Т6.one#О%20светофорах%20Т.6&section-id={CAA62863-22AA-46F0-8DC9-0D89F4903618}&page-id={5C461093-D883-4458-83F2-BEAAAE5369C7}&end"
+            }
+          },
+          {
+            "type": "Entities.OpenTestStep",
+            "id": "step23",
+            "version": null,
+            "possibleInterventions": [],
+            "resultType": "function String() { [native code] }",
+            "maxGrade": 1,
+            "title": null,
+            "problem": {
+              "type": "Bank.Assignment",
+              "id": null,
+              "version": null,
+              "content": "<div style=\"left:50px;top:75px;width:250px\">Какой тип светофора изображен на рисунке?\n<img width=\"200px\" src=\"https://i.imgur.com/pGpZhvL.jpg\"></img>\n</div>"
+            },
+            "correctAnswer": {
+              "type": "Bank.Key",
+              "id": null,
+              "version": null,
+              "value": "транспортный"
+            }
+          },
+          {
+            "type": "Entities.TestStep",
+            "id": "step24",
+            "version": null,
+            "possibleInterventions": [],
+            "resultType": "function Number() { [native code] }",
+            "maxGrade": 2,
+            "title": null,
+            "problem": {
+              "type": "Bank.Assignment",
+              "id": null,
+              "version": null,
+              "content": "В местах, где движение регулируется, пешеходы должны руководствоваться в первую очередь сигналами "
+            },
+            "answers": [
+              {
+                "type": "Bank.Key",
+                "id": null,
+                "version": null,
+                "value": "регулировщика"
+              },
+              {
+                "type": "Bank.Key",
+                "id": null,
+                "version": null,
+                "value": "транспортного светофора"
+              },
+              {
+                "type": "Bank.Key",
+                "id": null,
+                "version": null,
+                "value": "пешеходного светофора"
+              }
+            ],
+            "correctAnswer": 0
+          },
+          {
+            "type": "Entities.ControlStep",
+            "id": "step25",
+            "version": null,
+            "possibleInterventions": [],
+            "resultType": null,
+            "maxGrade": 6,
+            "title": null,
+            "exercises": [
+              {
+                "type": "Entities.OpenTestStep",
+                "id": "exercise21",
+                "version": null,
+                "possibleInterventions": [],
                 "resultType": "function String() { [native code] }",
+                "maxGrade": 1,
+                "title": null,
                 "problem": {
-                  "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                  "type": "Bank.Assignment",
                   "id": null,
                   "version": null,
-                  "content": "3 + 3 = ?"
+                  "content": "<div style=\"left:50px;top:75px;width:300px\">1. Светофор какого типа изображен на рисунке?\n  <img width=\"250\" src=\"https://arhivurokov.ru/multiurok/1/7/d/17dc7de6d066e259ca97319fa0183bc996409fa6/bukliet-pravila-dorozhnogho-dvizhieniia-v-zimnii-p_14.jpeg\"></img>\n  </div>"
                 },
                 "correctAnswer": {
-                  "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                  "type": "Bank.Key",
                   "id": null,
                   "version": null,
-                  "value": "6"
+                  "value": "Т.5"
+                }
+              },
+              {
+                "type": "Entities.PascaStep",
+                "id": "exercise22",
+                "version": null,
+                "possibleInterventions": [],
+                "resultType": "class PascaStepResult {\r\n    constructor() {\r\n        this.ArtifactUri = null;\r\n        this.FinalGrade = 0;\r\n        this.Grades = null;\r\n        this.Reviewers = null;\r\n    }\r\n}",
+                "maxGrade": 5,
+                "title": null,
+                "pascaFalsSettings": {
+                  "authorsCountToBeginAssessment": 2,
+                  "delayDates": true
+                },
+                "pascaSessionSettings": {
+                  "sessionName": "Проект Светофоры"
+                },
+                "pascaOnenoteSettings": {
+                  "pascaSectionGroupName": "PASCA",
+                  "assignmentSectionName": "Assignment"
                 }
               }
             ]
           }
-        ]
+        ],
+        "maxGrade": 10,
+        "minGrade": 5,
+        "possibleInterventions": [
+          {
+            "type": "Entities.GotoModuleIntervention",
+            "id": null,
+            "version": null,
+            "module": {
+              "type": "Entities.Module",
+              "id": "module1",
+              "version": null,
+              "steps": [
+                {
+                  "type": "Entities.StudyStep",
+                  "id": "step01",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": null,
+                  "maxGrade": 0,
+                  "title": null,
+                  "materials": {
+                    "type": "Bank.HypertextMaterial",
+                    "id": null,
+                    "version": null,
+                    "content": "<div>Приветствуем Вас на курсе ПДД 2018. Надеемся, вы узнаете много нового.</div>"
+                  }
+                },
+                {
+                  "type": "Entities.StudyStep",
+                  "id": "step02",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": null,
+                  "maxGrade": 0,
+                  "title": null,
+                  "materials": {
+                    "type": "Bank.HyperlinkMaterial",
+                    "id": null,
+                    "version": null,
+                    "link": "https://pdde.ru/pdd/"
+                  }
+                },
+                {
+                  "type": "Entities.TestStep",
+                  "id": "step1",
+                  "version": null,
+                  "possibleInterventions": [
+                    {
+                      "type": "Entities.Hint",
+                      "id": null,
+                      "version": null,
+                      "message": "Действие знака 4.1.1 «Движение прямо», установленного перед перекрёстком, распространяется только на первое пересечение проезжих частей за знаком."
+                    }
+                  ],
+                  "resultType": "function Number() { [native code] }",
+                  "maxGrade": 1,
+                  "title": null,
+                  "problem": {
+                    "type": "Bank.Assignment",
+                    "id": null,
+                    "version": null,
+                    "content": "<div style=\"left:50px;top:75px;width:300px\">Вам можно продолжить движение на перекрёстке:\n  <img width=\"400px\" src=\"https://avto-russia.ru/pdd_abma1b1/images/pdd-15-02.jpg\"></img>\n  </div>"
+                  },
+                  "answers": [
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "В направлениях Б и В"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "Только в направлении Б"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "В направлениях А и Б"
+                    }
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "type": "Entities.OpenTestStep",
+                  "id": "step12",
+                  "version": null,
+                  "possibleInterventions": [
+                    {
+                      "type": "Entities.Distinction",
+                      "id": null,
+                      "version": null,
+                      "message": "Лампа красного цвета располагается сверху, лампа зелёного цвета располагается снизу",
+                      "entity1": "красный",
+                      "entity2": "зелёный",
+                      "distinctor": null
+                    },
+                    {
+                      "type": "Entities.Hint",
+                      "id": null,
+                      "version": null,
+                      "message": "Цвет светофора может быть одним из трёх: красный, жёлтый или зелёный"
+                    }
+                  ],
+                  "resultType": "function String() { [native code] }",
+                  "maxGrade": 1,
+                  "title": null,
+                  "problem": {
+                    "type": "Bank.Assignment",
+                    "id": null,
+                    "version": null,
+                    "content": "Какой цвет светофора требует остановки?"
+                  },
+                  "correctAnswer": {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "красный"
+                  }
+                },
+                {
+                  "type": "Entities.StudyStep",
+                  "id": "step2",
+                  "version": null,
+                  "possibleInterventions": [
+                    {
+                      "type": "Entities.GotoStepIntervention",
+                      "id": null,
+                      "version": null,
+                      "step": {
+                        "type": "Entities.ControlStep",
+                        "id": "step3",
+                        "version": null,
+                        "possibleInterventions": [],
+                        "resultType": null,
+                        "maxGrade": 3,
+                        "title": null,
+                        "exercises": [
+                          {
+                            "type": "Entities.OpenTestStep",
+                            "id": "exercise1",
+                            "version": null,
+                            "possibleInterventions": [],
+                            "resultType": "function String() { [native code] }",
+                            "maxGrade": 2,
+                            "title": null,
+                            "problem": {
+                              "type": "Bank.Assignment",
+                              "id": null,
+                              "version": null,
+                              "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
+                            },
+                            "correctAnswer": {
+                              "type": "Bank.Key",
+                              "id": null,
+                              "version": null,
+                              "value": "категория"
+                            }
+                          },
+                          {
+                            "type": "Entities.GeneratedTestStep",
+                            "id": "exercise2",
+                            "version": null,
+                            "possibleInterventions": [],
+                            "resultType": null,
+                            "maxGrade": 1,
+                            "title": null,
+                            "objects": [
+                              "Категория А",
+                              "Категория А1",
+                              "Категория В",
+                              "Категория В1",
+                              "Категория ВЕ"
+                            ],
+                            "batchSize": 5,
+                            "question_type": 0,
+                            "question_form": 1,
+                            "features": [
+                              "Тип ТС",
+                              "Максимальная масса ТС",
+                              "Минимальный возраст"
+                            ],
+                            "minGrade": 0.7
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "resultType": null,
+                  "maxGrade": 0,
+                  "title": "Изучение светофора",
+                  "materials": {
+                    "type": "Bank.HypertextMaterial",
+                    "id": null,
+                    "version": null,
+                    "content": "<div style=\"left:50px;top:75px;width:300px\">Светофо́р (от свет + греч. φορός «несущий») — оптическое устройство, подающее световые сигналы, регулирующие движение автомобильного, железнодорожного, водного и другого транспорта, а также пешеходов на пешеходных переходах\n    <img width=\"400px\" src=\"https://ds03.infourok.ru/uploads/ex/07e6/0005ad35-95e22fd3/1/img1.jpg\"></img></div>"
+                  }
+                },
+                {
+                  "type": "Entities.ControlStep",
+                  "id": "step3",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": null,
+                  "maxGrade": 3,
+                  "title": null,
+                  "exercises": [
+                    {
+                      "type": "Entities.OpenTestStep",
+                      "id": "exercise1",
+                      "version": null,
+                      "possibleInterventions": [],
+                      "resultType": "function String() { [native code] }",
+                      "maxGrade": 2,
+                      "title": null,
+                      "problem": {
+                        "type": "Bank.Assignment",
+                        "id": null,
+                        "version": null,
+                        "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
+                      },
+                      "correctAnswer": {
+                        "type": "Bank.Key",
+                        "id": null,
+                        "version": null,
+                        "value": "категория"
+                      }
+                    },
+                    {
+                      "type": "Entities.GeneratedTestStep",
+                      "id": "exercise2",
+                      "version": null,
+                      "possibleInterventions": [],
+                      "resultType": null,
+                      "maxGrade": 1,
+                      "title": null,
+                      "objects": [
+                        "Категория А",
+                        "Категория А1",
+                        "Категория В",
+                        "Категория В1",
+                        "Категория ВЕ"
+                      ],
+                      "batchSize": 5,
+                      "question_type": 0,
+                      "question_form": 1,
+                      "features": [
+                        "Тип ТС",
+                        "Максимальная масса ТС",
+                        "Минимальный возраст"
+                      ],
+                      "minGrade": 0.7
+                    }
+                  ]
+                }
+              ],
+              "maxGrade": 5,
+              "minGrade": 3,
+              "possibleInterventions": [
+                {
+                  "type": "Entities.RepeatIntervention",
+                  "id": null,
+                  "version": null
+                }
+              ],
+              "title": "Основы ПДД",
+              "description": "В этом модуле вы пройдете первые шаги в изучении ПДД"
+            }
+          }
+        ],
+        "title": "Светофоры",
+        "description": "Детальное изучение светофоров"
       }
     }
   },
   "Courses": [
     {
-      "type": "class Course extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.description = null;\r\n        this.modules = null;\r\n        this.title = null;\r\n    }\r\n}",
-      "id": "CourseA",
+      "type": "Entities.Course",
+      "id": "ПДД 2018",
       "version": null,
-      "description": "It is an easy course!",
+      "description": "Этот курс — онлайн-тренажёр, помогающий легко и быстро подготовиться к сдаче теоретического экзамена в ГАИ. ",
       "modules": {
         "Children": [
           {
-            "Children": null,
+            "Children": [],
+            "type": "Entities.Tree",
             "Value": {
-              "type": "class Module extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.maxGrade = 0;\r\n        this.possibleInterventions = null;\r\n        this.steps = null;\r\n    }\r\n}",
+              "type": "Entities.Module",
               "id": "module1",
               "version": null,
-              "maxGrade": 0,
-              "possibleInterventions": null,
               "steps": [
                 {
-                  "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
+                  "type": "Entities.StudyStep",
+                  "id": "step01",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": null,
+                  "maxGrade": 0,
+                  "title": null,
+                  "materials": {
+                    "type": "Bank.HypertextMaterial",
+                    "id": null,
+                    "version": null,
+                    "content": "<div>Приветствуем Вас на курсе ПДД 2018. Надеемся, вы узнаете много нового.</div>"
+                  }
+                },
+                {
+                  "type": "Entities.StudyStep",
+                  "id": "step02",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": null,
+                  "maxGrade": 0,
+                  "title": null,
+                  "materials": {
+                    "type": "Bank.HyperlinkMaterial",
+                    "id": null,
+                    "version": null,
+                    "link": "https://pdde.ru/pdd/"
+                  }
+                },
+                {
+                  "type": "Entities.TestStep",
                   "id": "step1",
                   "version": null,
-                  "maxGrade": 0,
                   "possibleInterventions": [
                     {
+                      "type": "Entities.Hint",
+                      "id": null,
+                      "version": null,
+                      "message": "Действие знака 4.1.1 «Движение прямо», установленного перед перекрёстком, распространяется только на первое пересечение проезжих частей за знаком."
+                    }
+                  ],
+                  "resultType": "function Number() { [native code] }",
+                  "maxGrade": 1,
+                  "title": null,
+                  "problem": {
+                    "type": "Bank.Assignment",
+                    "id": null,
+                    "version": null,
+                    "content": "<div style=\"left:50px;top:75px;width:300px\">Вам можно продолжить движение на перекрёстке:\n  <img width=\"400px\" src=\"https://avto-russia.ru/pdd_abma1b1/images/pdd-15-02.jpg\"></img>\n  </div>"
+                  },
+                  "answers": [
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "В направлениях Б и В"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "Только в направлении Б"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "В направлениях А и Б"
+                    }
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "type": "Entities.OpenTestStep",
+                  "id": "step12",
+                  "version": null,
+                  "possibleInterventions": [
+                    {
+                      "type": "Entities.Distinction",
+                      "id": null,
+                      "version": null,
+                      "message": "Лампа красного цвета располагается сверху, лампа зелёного цвета располагается снизу",
+                      "entity1": "красный",
+                      "entity2": "зелёный",
+                      "distinctor": null
+                    },
+                    {
+                      "type": "Entities.Hint",
+                      "id": null,
+                      "version": null,
+                      "message": "Цвет светофора может быть одним из трёх: красный, жёлтый или зелёный"
+                    }
+                  ],
+                  "resultType": "function String() { [native code] }",
+                  "maxGrade": 1,
+                  "title": null,
+                  "problem": {
+                    "type": "Bank.Assignment",
+                    "id": null,
+                    "version": null,
+                    "content": "Какой цвет светофора требует остановки?"
+                  },
+                  "correctAnswer": {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "красный"
+                  }
+                },
+                {
+                  "type": "Entities.StudyStep",
+                  "id": "step2",
+                  "version": null,
+                  "possibleInterventions": [
+                    {
+                      "type": "Entities.GotoStepIntervention",
+                      "id": null,
+                      "version": null,
                       "step": {
-                        "type": "class ControlStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.exercises = null;\r\n    }\r\n    getGrade() {\r\n        return 0;\r\n    }\r\n}",
+                        "type": "Entities.ControlStep",
                         "id": "step3",
                         "version": null,
-                        "maxGrade": 0,
-                        "possibleInterventions": null,
+                        "possibleInterventions": [],
                         "resultType": null,
+                        "maxGrade": 3,
+                        "title": null,
                         "exercises": [
                           {
-                            "type": "class TestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.answers = null;\r\n        this.correctAnswer = 0;\r\n        this.resultType = Number.toString();\r\n    }\r\n}",
+                            "type": "Entities.OpenTestStep",
                             "id": "exercise1",
                             "version": null,
-                            "maxGrade": 5,
-                            "possibleInterventions": null,
-                            "resultType": "function Number() { [native code] }",
-                            "problem": {
-                              "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                              "id": null,
-                              "version": null,
-                              "content": "2 + 2 = ?"
-                            },
-                            "answers": [
-                              {
-                                "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                                "id": null,
-                                "version": null,
-                                "value": "2"
-                              },
-                              {
-                                "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                                "id": null,
-                                "version": null,
-                                "value": "3"
-                              },
-                              {
-                                "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                                "id": null,
-                                "version": null,
-                                "value": "4"
-                              },
-                              {
-                                "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                                "id": null,
-                                "version": null,
-                                "value": "5"
-                              }
-                            ],
-                            "correctAnswer": 3
-                          },
-                          {
-                            "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-                            "id": "exercise2",
-                            "version": null,
-                            "maxGrade": 15,
-                            "possibleInterventions": null,
+                            "possibleInterventions": [],
                             "resultType": "function String() { [native code] }",
+                            "maxGrade": 2,
+                            "title": null,
                             "problem": {
-                              "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                              "type": "Bank.Assignment",
                               "id": null,
                               "version": null,
-                              "content": "3 + 3 = ?"
+                              "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
                             },
                             "correctAnswer": {
-                              "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                              "type": "Bank.Key",
                               "id": null,
                               "version": null,
-                              "value": "6"
+                              "value": "категория"
                             }
+                          },
+                          {
+                            "type": "Entities.GeneratedTestStep",
+                            "id": "exercise2",
+                            "version": null,
+                            "possibleInterventions": [],
+                            "resultType": null,
+                            "maxGrade": 1,
+                            "title": null,
+                            "objects": [
+                              "Категория А",
+                              "Категория А1",
+                              "Категория В",
+                              "Категория В1",
+                              "Категория ВЕ"
+                            ],
+                            "batchSize": 5,
+                            "question_type": 0,
+                            "question_form": 1,
+                            "features": [
+                              "Тип ТС",
+                              "Максимальная масса ТС",
+                              "Минимальный возраст"
+                            ],
+                            "minGrade": 0.7
                           }
                         ]
                       }
                     }
                   ],
-                  "resultType": "function String() { [native code] }",
-                  "problem": {
-                    "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                    "id": null,
-                    "version": null,
-                    "content": "How much watch?"
-                  },
-                  "correctAnswer": {
-                    "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                    "id": null,
-                    "version": null,
-                    "value": "Whom how"
-                  }
-                },
-                {
-                  "type": "class StudyStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.materials = null;\r\n    }\r\n}",
-                  "id": "step2",
-                  "version": null,
-                  "maxGrade": 0,
-                  "possibleInterventions": null,
                   "resultType": null,
+                  "maxGrade": 0,
+                  "title": "Изучение светофора",
                   "materials": {
-                    "type": "class HypertextMaterial extends Material_1.Material {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                    "type": "Bank.HypertextMaterial",
                     "id": null,
                     "version": null,
-                    "content": "<div>Material1.Content Image!<img source=\"https://www.google.ru/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png\"></img></div>"
+                    "content": "<div style=\"left:50px;top:75px;width:300px\">Светофо́р (от свет + греч. φορός «несущий») — оптическое устройство, подающее световые сигналы, регулирующие движение автомобильного, железнодорожного, водного и другого транспорта, а также пешеходов на пешеходных переходах\n    <img width=\"400px\" src=\"https://ds03.infourok.ru/uploads/ex/07e6/0005ad35-95e22fd3/1/img1.jpg\"></img></div>"
                   }
                 },
                 {
-                  "type": "class ControlStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.exercises = null;\r\n    }\r\n    getGrade() {\r\n        return 0;\r\n    }\r\n}",
+                  "type": "Entities.ControlStep",
                   "id": "step3",
                   "version": null,
-                  "maxGrade": 0,
-                  "possibleInterventions": null,
+                  "possibleInterventions": [],
                   "resultType": null,
+                  "maxGrade": 3,
+                  "title": null,
                   "exercises": [
                     {
-                      "type": "class TestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.answers = null;\r\n        this.correctAnswer = 0;\r\n        this.resultType = Number.toString();\r\n    }\r\n}",
+                      "type": "Entities.OpenTestStep",
                       "id": "exercise1",
                       "version": null,
-                      "maxGrade": 5,
-                      "possibleInterventions": null,
-                      "resultType": "function Number() { [native code] }",
-                      "problem": {
-                        "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                        "id": null,
-                        "version": null,
-                        "content": "2 + 2 = ?"
-                      },
-                      "answers": [
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "2"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "3"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "4"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "5"
-                        }
-                      ],
-                      "correctAnswer": 3
-                    },
-                    {
-                      "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-                      "id": "exercise2",
-                      "version": null,
-                      "maxGrade": 15,
-                      "possibleInterventions": null,
+                      "possibleInterventions": [],
                       "resultType": "function String() { [native code] }",
+                      "maxGrade": 2,
+                      "title": null,
                       "problem": {
-                        "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                        "type": "Bank.Assignment",
                         "id": null,
                         "version": null,
-                        "content": "3 + 3 = ?"
+                        "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
                       },
                       "correctAnswer": {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                        "type": "Bank.Key",
                         "id": null,
                         "version": null,
-                        "value": "6"
+                        "value": "категория"
                       }
+                    },
+                    {
+                      "type": "Entities.GeneratedTestStep",
+                      "id": "exercise2",
+                      "version": null,
+                      "possibleInterventions": [],
+                      "resultType": null,
+                      "maxGrade": 1,
+                      "title": null,
+                      "objects": [
+                        "Категория А",
+                        "Категория А1",
+                        "Категория В",
+                        "Категория В1",
+                        "Категория ВЕ"
+                      ],
+                      "batchSize": 5,
+                      "question_type": 0,
+                      "question_form": 1,
+                      "features": [
+                        "Тип ТС",
+                        "Максимальная масса ТС",
+                        "Минимальный возраст"
+                      ],
+                      "minGrade": 0.7
                     }
                   ]
                 }
-              ]
+              ],
+              "maxGrade": 5,
+              "minGrade": 3,
+              "possibleInterventions": [
+                {
+                  "type": "Entities.RepeatIntervention",
+                  "id": null,
+                  "version": null
+                }
+              ],
+              "title": "Основы ПДД",
+              "description": "В этом модуле вы пройдете первые шаги в изучении ПДД"
             }
           },
           {
-            "Children": null,
+            "Children": [],
+            "type": "Entities.Tree",
             "Value": {
-              "type": "class Module extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.maxGrade = 0;\r\n        this.possibleInterventions = null;\r\n        this.steps = null;\r\n    }\r\n}",
+              "type": "Entities.Module",
               "id": "module2",
               "version": null,
-              "maxGrade": 0,
-              "possibleInterventions": null,
               "steps": [
                 {
-                  "type": "class ControlStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.exercises = null;\r\n    }\r\n    getGrade() {\r\n        return 0;\r\n    }\r\n}",
+                  "type": "Entities.TestStep",
                   "id": "step21",
                   "version": null,
-                  "maxGrade": 0,
-                  "possibleInterventions": null,
-                  "resultType": null,
-                  "exercises": [
+                  "possibleInterventions": [],
+                  "resultType": "function Number() { [native code] }",
+                  "maxGrade": 1,
+                  "title": null,
+                  "problem": {
+                    "type": "Bank.Assignment",
+                    "id": null,
+                    "version": null,
+                    "content": "Вспомним пройденное. Сколько цветов у светофора?"
+                  },
+                  "answers": [
                     {
-                      "type": "class TestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.answers = null;\r\n        this.correctAnswer = 0;\r\n        this.resultType = Number.toString();\r\n    }\r\n}",
-                      "id": "exercise1",
+                      "type": "Bank.Key",
+                      "id": null,
                       "version": null,
-                      "maxGrade": 5,
-                      "possibleInterventions": null,
-                      "resultType": "function Number() { [native code] }",
-                      "problem": {
-                        "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                        "id": null,
-                        "version": null,
-                        "content": "2 + 2 = ?"
-                      },
-                      "answers": [
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "2"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "3"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "4"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "5"
-                        }
-                      ],
-                      "correctAnswer": 3
+                      "value": "1"
                     },
                     {
-                      "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-                      "id": "exercise2",
+                      "type": "Bank.Key",
+                      "id": null,
                       "version": null,
-                      "maxGrade": 15,
-                      "possibleInterventions": null,
+                      "value": "2"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "3"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "4"
+                    }
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "type": "Entities.StudyStep",
+                  "id": "step22",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": null,
+                  "maxGrade": 0,
+                  "title": null,
+                  "materials": {
+                    "type": "Bank.HyperlinkMaterial",
+                    "id": null,
+                    "version": null,
+                    "link": "onenote:https://eduhseru-my.sharepoint.com/personal/aikolomiets_edu_hse_ru/Documents/Записные%20книжки%20для%20занятий/Testroom/_Библиотека%20содержимого/SectionGroup5/Т6.one#О%20светофорах%20Т.6&section-id={CAA62863-22AA-46F0-8DC9-0D89F4903618}&page-id={5C461093-D883-4458-83F2-BEAAAE5369C7}&end"
+                  }
+                },
+                {
+                  "type": "Entities.OpenTestStep",
+                  "id": "step23",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": "function String() { [native code] }",
+                  "maxGrade": 1,
+                  "title": null,
+                  "problem": {
+                    "type": "Bank.Assignment",
+                    "id": null,
+                    "version": null,
+                    "content": "<div style=\"left:50px;top:75px;width:250px\">Какой тип светофора изображен на рисунке?\n<img width=\"200px\" src=\"https://i.imgur.com/pGpZhvL.jpg\"></img>\n</div>"
+                  },
+                  "correctAnswer": {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "транспортный"
+                  }
+                },
+                {
+                  "type": "Entities.TestStep",
+                  "id": "step24",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": "function Number() { [native code] }",
+                  "maxGrade": 2,
+                  "title": null,
+                  "problem": {
+                    "type": "Bank.Assignment",
+                    "id": null,
+                    "version": null,
+                    "content": "В местах, где движение регулируется, пешеходы должны руководствоваться в первую очередь сигналами "
+                  },
+                  "answers": [
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "регулировщика"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "транспортного светофора"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "пешеходного светофора"
+                    }
+                  ],
+                  "correctAnswer": 0
+                },
+                {
+                  "type": "Entities.ControlStep",
+                  "id": "step25",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": null,
+                  "maxGrade": 6,
+                  "title": null,
+                  "exercises": [
+                    {
+                      "type": "Entities.OpenTestStep",
+                      "id": "exercise21",
+                      "version": null,
+                      "possibleInterventions": [],
                       "resultType": "function String() { [native code] }",
+                      "maxGrade": 1,
+                      "title": null,
                       "problem": {
-                        "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                        "type": "Bank.Assignment",
                         "id": null,
                         "version": null,
-                        "content": "3 + 3 = ?"
+                        "content": "<div style=\"left:50px;top:75px;width:300px\">1. Светофор какого типа изображен на рисунке?\n  <img width=\"250\" src=\"https://arhivurokov.ru/multiurok/1/7/d/17dc7de6d066e259ca97319fa0183bc996409fa6/bukliet-pravila-dorozhnogho-dvizhieniia-v-zimnii-p_14.jpeg\"></img>\n  </div>"
                       },
                       "correctAnswer": {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                        "type": "Bank.Key",
                         "id": null,
                         "version": null,
-                        "value": "6"
+                        "value": "Т.5"
+                      }
+                    },
+                    {
+                      "type": "Entities.PascaStep",
+                      "id": "exercise22",
+                      "version": null,
+                      "possibleInterventions": [],
+                      "resultType": "class PascaStepResult {\r\n    constructor() {\r\n        this.ArtifactUri = null;\r\n        this.FinalGrade = 0;\r\n        this.Grades = null;\r\n        this.Reviewers = null;\r\n    }\r\n}",
+                      "maxGrade": 5,
+                      "title": null,
+                      "pascaFalsSettings": {
+                        "authorsCountToBeginAssessment": 2,
+                        "delayDates": true
+                      },
+                      "pascaSessionSettings": {
+                        "sessionName": "Проект Светофоры"
+                      },
+                      "pascaOnenoteSettings": {
+                        "pascaSectionGroupName": "PASCA",
+                        "assignmentSectionName": "Assignment"
                       }
                     }
                   ]
                 }
-              ]
+              ],
+              "maxGrade": 10,
+              "minGrade": 5,
+              "possibleInterventions": [
+                {
+                  "type": "Entities.GotoModuleIntervention",
+                  "id": null,
+                  "version": null,
+                  "module": {
+                    "type": "Entities.Module",
+                    "id": "module1",
+                    "version": null,
+                    "steps": [
+                      {
+                        "type": "Entities.StudyStep",
+                        "id": "step01",
+                        "version": null,
+                        "possibleInterventions": [],
+                        "resultType": null,
+                        "maxGrade": 0,
+                        "title": null,
+                        "materials": {
+                          "type": "Bank.HypertextMaterial",
+                          "id": null,
+                          "version": null,
+                          "content": "<div>Приветствуем Вас на курсе ПДД 2018. Надеемся, вы узнаете много нового.</div>"
+                        }
+                      },
+                      {
+                        "type": "Entities.StudyStep",
+                        "id": "step02",
+                        "version": null,
+                        "possibleInterventions": [],
+                        "resultType": null,
+                        "maxGrade": 0,
+                        "title": null,
+                        "materials": {
+                          "type": "Bank.HyperlinkMaterial",
+                          "id": null,
+                          "version": null,
+                          "link": "https://pdde.ru/pdd/"
+                        }
+                      },
+                      {
+                        "type": "Entities.TestStep",
+                        "id": "step1",
+                        "version": null,
+                        "possibleInterventions": [
+                          {
+                            "type": "Entities.Hint",
+                            "id": null,
+                            "version": null,
+                            "message": "Действие знака 4.1.1 «Движение прямо», установленного перед перекрёстком, распространяется только на первое пересечение проезжих частей за знаком."
+                          }
+                        ],
+                        "resultType": "function Number() { [native code] }",
+                        "maxGrade": 1,
+                        "title": null,
+                        "problem": {
+                          "type": "Bank.Assignment",
+                          "id": null,
+                          "version": null,
+                          "content": "<div style=\"left:50px;top:75px;width:300px\">Вам можно продолжить движение на перекрёстке:\n  <img width=\"400px\" src=\"https://avto-russia.ru/pdd_abma1b1/images/pdd-15-02.jpg\"></img>\n  </div>"
+                        },
+                        "answers": [
+                          {
+                            "type": "Bank.Key",
+                            "id": null,
+                            "version": null,
+                            "value": "В направлениях Б и В"
+                          },
+                          {
+                            "type": "Bank.Key",
+                            "id": null,
+                            "version": null,
+                            "value": "Только в направлении Б"
+                          },
+                          {
+                            "type": "Bank.Key",
+                            "id": null,
+                            "version": null,
+                            "value": "В направлениях А и Б"
+                          }
+                        ],
+                        "correctAnswer": 2
+                      },
+                      {
+                        "type": "Entities.OpenTestStep",
+                        "id": "step12",
+                        "version": null,
+                        "possibleInterventions": [
+                          {
+                            "type": "Entities.Distinction",
+                            "id": null,
+                            "version": null,
+                            "message": "Лампа красного цвета располагается сверху, лампа зелёного цвета располагается снизу",
+                            "entity1": "красный",
+                            "entity2": "зелёный",
+                            "distinctor": null
+                          },
+                          {
+                            "type": "Entities.Hint",
+                            "id": null,
+                            "version": null,
+                            "message": "Цвет светофора может быть одним из трёх: красный, жёлтый или зелёный"
+                          }
+                        ],
+                        "resultType": "function String() { [native code] }",
+                        "maxGrade": 1,
+                        "title": null,
+                        "problem": {
+                          "type": "Bank.Assignment",
+                          "id": null,
+                          "version": null,
+                          "content": "Какой цвет светофора требует остановки?"
+                        },
+                        "correctAnswer": {
+                          "type": "Bank.Key",
+                          "id": null,
+                          "version": null,
+                          "value": "красный"
+                        }
+                      },
+                      {
+                        "type": "Entities.StudyStep",
+                        "id": "step2",
+                        "version": null,
+                        "possibleInterventions": [
+                          {
+                            "type": "Entities.GotoStepIntervention",
+                            "id": null,
+                            "version": null,
+                            "step": {
+                              "type": "Entities.ControlStep",
+                              "id": "step3",
+                              "version": null,
+                              "possibleInterventions": [],
+                              "resultType": null,
+                              "maxGrade": 3,
+                              "title": null,
+                              "exercises": [
+                                {
+                                  "type": "Entities.OpenTestStep",
+                                  "id": "exercise1",
+                                  "version": null,
+                                  "possibleInterventions": [],
+                                  "resultType": "function String() { [native code] }",
+                                  "maxGrade": 2,
+                                  "title": null,
+                                  "problem": {
+                                    "type": "Bank.Assignment",
+                                    "id": null,
+                                    "version": null,
+                                    "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
+                                  },
+                                  "correctAnswer": {
+                                    "type": "Bank.Key",
+                                    "id": null,
+                                    "version": null,
+                                    "value": "категория"
+                                  }
+                                },
+                                {
+                                  "type": "Entities.GeneratedTestStep",
+                                  "id": "exercise2",
+                                  "version": null,
+                                  "possibleInterventions": [],
+                                  "resultType": null,
+                                  "maxGrade": 1,
+                                  "title": null,
+                                  "objects": [
+                                    "Категория А",
+                                    "Категория А1",
+                                    "Категория В",
+                                    "Категория В1",
+                                    "Категория ВЕ"
+                                  ],
+                                  "batchSize": 5,
+                                  "question_type": 0,
+                                  "question_form": 1,
+                                  "features": [
+                                    "Тип ТС",
+                                    "Максимальная масса ТС",
+                                    "Минимальный возраст"
+                                  ],
+                                  "minGrade": 0.7
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "resultType": null,
+                        "maxGrade": 0,
+                        "title": "Изучение светофора",
+                        "materials": {
+                          "type": "Bank.HypertextMaterial",
+                          "id": null,
+                          "version": null,
+                          "content": "<div style=\"left:50px;top:75px;width:300px\">Светофо́р (от свет + греч. φορός «несущий») — оптическое устройство, подающее световые сигналы, регулирующие движение автомобильного, железнодорожного, водного и другого транспорта, а также пешеходов на пешеходных переходах\n    <img width=\"400px\" src=\"https://ds03.infourok.ru/uploads/ex/07e6/0005ad35-95e22fd3/1/img1.jpg\"></img></div>"
+                        }
+                      },
+                      {
+                        "type": "Entities.ControlStep",
+                        "id": "step3",
+                        "version": null,
+                        "possibleInterventions": [],
+                        "resultType": null,
+                        "maxGrade": 3,
+                        "title": null,
+                        "exercises": [
+                          {
+                            "type": "Entities.OpenTestStep",
+                            "id": "exercise1",
+                            "version": null,
+                            "possibleInterventions": [],
+                            "resultType": "function String() { [native code] }",
+                            "maxGrade": 2,
+                            "title": null,
+                            "problem": {
+                              "type": "Bank.Assignment",
+                              "id": null,
+                              "version": null,
+                              "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
+                            },
+                            "correctAnswer": {
+                              "type": "Bank.Key",
+                              "id": null,
+                              "version": null,
+                              "value": "категория"
+                            }
+                          },
+                          {
+                            "type": "Entities.GeneratedTestStep",
+                            "id": "exercise2",
+                            "version": null,
+                            "possibleInterventions": [],
+                            "resultType": null,
+                            "maxGrade": 1,
+                            "title": null,
+                            "objects": [
+                              "Категория А",
+                              "Категория А1",
+                              "Категория В",
+                              "Категория В1",
+                              "Категория ВЕ"
+                            ],
+                            "batchSize": 5,
+                            "question_type": 0,
+                            "question_form": 1,
+                            "features": [
+                              "Тип ТС",
+                              "Максимальная масса ТС",
+                              "Минимальный возраст"
+                            ],
+                            "minGrade": 0.7
+                          }
+                        ]
+                      }
+                    ],
+                    "maxGrade": 5,
+                    "minGrade": 3,
+                    "possibleInterventions": [
+                      {
+                        "type": "Entities.RepeatIntervention",
+                        "id": null,
+                        "version": null
+                      }
+                    ],
+                    "title": "Основы ПДД",
+                    "description": "В этом модуле вы пройдете первые шаги в изучении ПДД"
+                  }
+                }
+              ],
+              "title": "Светофоры",
+              "description": "Детальное изучение светофоров"
             }
           }
         ],
+        "type": "Entities.Tree",
         "Value": null
       },
-      "title": "CourseA"
+      "title": "ПДД 2018"
     },
     {
-      "type": "class Course extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.description = null;\r\n        this.modules = null;\r\n        this.title = null;\r\n    }\r\n}",
-      "id": "CourseB",
+      "type": "Entities.Course",
+      "id": "Металлы и сплавы",
       "version": null,
-      "description": "You shall not pass",
+      "description": "Природные, искусственные и синтетические \n  материалы, классификация материалов по \n  агрегатному состоянию, химическому \n  составу и функциональному назначению. \n  Применение материалов в сельском \n  хозяйстве.",
       "modules": {
         "Children": [
           {
-            "Children": null,
+            "Children": [],
+            "type": "Entities.Tree",
             "Value": {
-              "type": "class Module extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.maxGrade = 0;\r\n        this.possibleInterventions = null;\r\n        this.steps = null;\r\n    }\r\n}",
+              "type": "Entities.Module",
               "id": "module1",
               "version": null,
-              "maxGrade": 0,
-              "possibleInterventions": null,
               "steps": [
                 {
-                  "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
+                  "type": "Entities.StudyStep",
+                  "id": "step01",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": null,
+                  "maxGrade": 0,
+                  "title": null,
+                  "materials": {
+                    "type": "Bank.HypertextMaterial",
+                    "id": null,
+                    "version": null,
+                    "content": "<div>Приветствуем Вас на курсе ПДД 2018. Надеемся, вы узнаете много нового.</div>"
+                  }
+                },
+                {
+                  "type": "Entities.StudyStep",
+                  "id": "step02",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": null,
+                  "maxGrade": 0,
+                  "title": null,
+                  "materials": {
+                    "type": "Bank.HyperlinkMaterial",
+                    "id": null,
+                    "version": null,
+                    "link": "https://pdde.ru/pdd/"
+                  }
+                },
+                {
+                  "type": "Entities.TestStep",
                   "id": "step1",
                   "version": null,
-                  "maxGrade": 0,
                   "possibleInterventions": [
                     {
+                      "type": "Entities.Hint",
+                      "id": null,
+                      "version": null,
+                      "message": "Действие знака 4.1.1 «Движение прямо», установленного перед перекрёстком, распространяется только на первое пересечение проезжих частей за знаком."
+                    }
+                  ],
+                  "resultType": "function Number() { [native code] }",
+                  "maxGrade": 1,
+                  "title": null,
+                  "problem": {
+                    "type": "Bank.Assignment",
+                    "id": null,
+                    "version": null,
+                    "content": "<div style=\"left:50px;top:75px;width:300px\">Вам можно продолжить движение на перекрёстке:\n  <img width=\"400px\" src=\"https://avto-russia.ru/pdd_abma1b1/images/pdd-15-02.jpg\"></img>\n  </div>"
+                  },
+                  "answers": [
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "В направлениях Б и В"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "Только в направлении Б"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "В направлениях А и Б"
+                    }
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "type": "Entities.OpenTestStep",
+                  "id": "step12",
+                  "version": null,
+                  "possibleInterventions": [
+                    {
+                      "type": "Entities.Distinction",
+                      "id": null,
+                      "version": null,
+                      "message": "Лампа красного цвета располагается сверху, лампа зелёного цвета располагается снизу",
+                      "entity1": "красный",
+                      "entity2": "зелёный",
+                      "distinctor": null
+                    },
+                    {
+                      "type": "Entities.Hint",
+                      "id": null,
+                      "version": null,
+                      "message": "Цвет светофора может быть одним из трёх: красный, жёлтый или зелёный"
+                    }
+                  ],
+                  "resultType": "function String() { [native code] }",
+                  "maxGrade": 1,
+                  "title": null,
+                  "problem": {
+                    "type": "Bank.Assignment",
+                    "id": null,
+                    "version": null,
+                    "content": "Какой цвет светофора требует остановки?"
+                  },
+                  "correctAnswer": {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "красный"
+                  }
+                },
+                {
+                  "type": "Entities.StudyStep",
+                  "id": "step2",
+                  "version": null,
+                  "possibleInterventions": [
+                    {
+                      "type": "Entities.GotoStepIntervention",
+                      "id": null,
+                      "version": null,
                       "step": {
-                        "type": "class ControlStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.exercises = null;\r\n    }\r\n    getGrade() {\r\n        return 0;\r\n    }\r\n}",
+                        "type": "Entities.ControlStep",
                         "id": "step3",
                         "version": null,
-                        "maxGrade": 0,
-                        "possibleInterventions": null,
+                        "possibleInterventions": [],
                         "resultType": null,
+                        "maxGrade": 3,
+                        "title": null,
                         "exercises": [
                           {
-                            "type": "class TestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.answers = null;\r\n        this.correctAnswer = 0;\r\n        this.resultType = Number.toString();\r\n    }\r\n}",
+                            "type": "Entities.OpenTestStep",
                             "id": "exercise1",
                             "version": null,
-                            "maxGrade": 5,
-                            "possibleInterventions": null,
-                            "resultType": "function Number() { [native code] }",
-                            "problem": {
-                              "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                              "id": null,
-                              "version": null,
-                              "content": "2 + 2 = ?"
-                            },
-                            "answers": [
-                              {
-                                "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                                "id": null,
-                                "version": null,
-                                "value": "2"
-                              },
-                              {
-                                "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                                "id": null,
-                                "version": null,
-                                "value": "3"
-                              },
-                              {
-                                "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                                "id": null,
-                                "version": null,
-                                "value": "4"
-                              },
-                              {
-                                "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                                "id": null,
-                                "version": null,
-                                "value": "5"
-                              }
-                            ],
-                            "correctAnswer": 3
-                          },
-                          {
-                            "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-                            "id": "exercise2",
-                            "version": null,
-                            "maxGrade": 15,
-                            "possibleInterventions": null,
+                            "possibleInterventions": [],
                             "resultType": "function String() { [native code] }",
+                            "maxGrade": 2,
+                            "title": null,
                             "problem": {
-                              "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                              "type": "Bank.Assignment",
                               "id": null,
                               "version": null,
-                              "content": "3 + 3 = ?"
+                              "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
                             },
                             "correctAnswer": {
-                              "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                              "type": "Bank.Key",
                               "id": null,
                               "version": null,
-                              "value": "6"
+                              "value": "категория"
                             }
+                          },
+                          {
+                            "type": "Entities.GeneratedTestStep",
+                            "id": "exercise2",
+                            "version": null,
+                            "possibleInterventions": [],
+                            "resultType": null,
+                            "maxGrade": 1,
+                            "title": null,
+                            "objects": [
+                              "Категория А",
+                              "Категория А1",
+                              "Категория В",
+                              "Категория В1",
+                              "Категория ВЕ"
+                            ],
+                            "batchSize": 5,
+                            "question_type": 0,
+                            "question_form": 1,
+                            "features": [
+                              "Тип ТС",
+                              "Максимальная масса ТС",
+                              "Минимальный возраст"
+                            ],
+                            "minGrade": 0.7
                           }
                         ]
                       }
                     }
                   ],
-                  "resultType": "function String() { [native code] }",
-                  "problem": {
-                    "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                    "id": null,
-                    "version": null,
-                    "content": "How much watch?"
-                  },
-                  "correctAnswer": {
-                    "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                    "id": null,
-                    "version": null,
-                    "value": "Whom how"
-                  }
-                },
-                {
-                  "type": "class StudyStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.materials = null;\r\n    }\r\n}",
-                  "id": "step2",
-                  "version": null,
-                  "maxGrade": 0,
-                  "possibleInterventions": null,
                   "resultType": null,
+                  "maxGrade": 0,
+                  "title": "Изучение светофора",
                   "materials": {
-                    "type": "class HypertextMaterial extends Material_1.Material {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                    "type": "Bank.HypertextMaterial",
                     "id": null,
                     "version": null,
-                    "content": "<div>Material1.Content Image!<img source=\"https://www.google.ru/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png\"></img></div>"
+                    "content": "<div style=\"left:50px;top:75px;width:300px\">Светофо́р (от свет + греч. φορός «несущий») — оптическое устройство, подающее световые сигналы, регулирующие движение автомобильного, железнодорожного, водного и другого транспорта, а также пешеходов на пешеходных переходах\n    <img width=\"400px\" src=\"https://ds03.infourok.ru/uploads/ex/07e6/0005ad35-95e22fd3/1/img1.jpg\"></img></div>"
                   }
                 },
                 {
-                  "type": "class ControlStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.exercises = null;\r\n    }\r\n    getGrade() {\r\n        return 0;\r\n    }\r\n}",
+                  "type": "Entities.ControlStep",
                   "id": "step3",
                   "version": null,
-                  "maxGrade": 0,
-                  "possibleInterventions": null,
+                  "possibleInterventions": [],
                   "resultType": null,
+                  "maxGrade": 3,
+                  "title": null,
                   "exercises": [
                     {
-                      "type": "class TestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.answers = null;\r\n        this.correctAnswer = 0;\r\n        this.resultType = Number.toString();\r\n    }\r\n}",
+                      "type": "Entities.OpenTestStep",
                       "id": "exercise1",
                       "version": null,
-                      "maxGrade": 5,
-                      "possibleInterventions": null,
-                      "resultType": "function Number() { [native code] }",
-                      "problem": {
-                        "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                        "id": null,
-                        "version": null,
-                        "content": "2 + 2 = ?"
-                      },
-                      "answers": [
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "2"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "3"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "4"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "5"
-                        }
-                      ],
-                      "correctAnswer": 3
-                    },
-                    {
-                      "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-                      "id": "exercise2",
-                      "version": null,
-                      "maxGrade": 15,
-                      "possibleInterventions": null,
+                      "possibleInterventions": [],
                       "resultType": "function String() { [native code] }",
+                      "maxGrade": 2,
+                      "title": null,
                       "problem": {
-                        "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                        "type": "Bank.Assignment",
                         "id": null,
                         "version": null,
-                        "content": "3 + 3 = ?"
+                        "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
                       },
                       "correctAnswer": {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                        "type": "Bank.Key",
                         "id": null,
                         "version": null,
-                        "value": "6"
+                        "value": "категория"
                       }
+                    },
+                    {
+                      "type": "Entities.GeneratedTestStep",
+                      "id": "exercise2",
+                      "version": null,
+                      "possibleInterventions": [],
+                      "resultType": null,
+                      "maxGrade": 1,
+                      "title": null,
+                      "objects": [
+                        "Категория А",
+                        "Категория А1",
+                        "Категория В",
+                        "Категория В1",
+                        "Категория ВЕ"
+                      ],
+                      "batchSize": 5,
+                      "question_type": 0,
+                      "question_form": 1,
+                      "features": [
+                        "Тип ТС",
+                        "Максимальная масса ТС",
+                        "Минимальный возраст"
+                      ],
+                      "minGrade": 0.7
                     }
                   ]
                 }
-              ]
+              ],
+              "maxGrade": 5,
+              "minGrade": 3,
+              "possibleInterventions": [
+                {
+                  "type": "Entities.RepeatIntervention",
+                  "id": null,
+                  "version": null
+                }
+              ],
+              "title": "Основы ПДД",
+              "description": "В этом модуле вы пройдете первые шаги в изучении ПДД"
             }
           },
           {
-            "Children": null,
+            "Children": [],
+            "type": "Entities.Tree",
             "Value": {
-              "type": "class Module extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.maxGrade = 0;\r\n        this.possibleInterventions = null;\r\n        this.steps = null;\r\n    }\r\n}",
+              "type": "Entities.Module",
               "id": "module2",
               "version": null,
-              "maxGrade": 0,
-              "possibleInterventions": null,
               "steps": [
                 {
-                  "type": "class ControlStep extends Step_1.Step {\r\n    constructor() {\r\n        super();\r\n        this.exercises = null;\r\n    }\r\n    getGrade() {\r\n        return 0;\r\n    }\r\n}",
+                  "type": "Entities.TestStep",
                   "id": "step21",
                   "version": null,
-                  "maxGrade": 0,
-                  "possibleInterventions": null,
-                  "resultType": null,
-                  "exercises": [
+                  "possibleInterventions": [],
+                  "resultType": "function Number() { [native code] }",
+                  "maxGrade": 1,
+                  "title": null,
+                  "problem": {
+                    "type": "Bank.Assignment",
+                    "id": null,
+                    "version": null,
+                    "content": "Вспомним пройденное. Сколько цветов у светофора?"
+                  },
+                  "answers": [
                     {
-                      "type": "class TestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.answers = null;\r\n        this.correctAnswer = 0;\r\n        this.resultType = Number.toString();\r\n    }\r\n}",
-                      "id": "exercise1",
+                      "type": "Bank.Key",
+                      "id": null,
                       "version": null,
-                      "maxGrade": 5,
-                      "possibleInterventions": null,
-                      "resultType": "function Number() { [native code] }",
-                      "problem": {
-                        "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
-                        "id": null,
-                        "version": null,
-                        "content": "2 + 2 = ?"
-                      },
-                      "answers": [
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "2"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "3"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "4"
-                        },
-                        {
-                          "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
-                          "id": null,
-                          "version": null,
-                          "value": "5"
-                        }
-                      ],
-                      "correctAnswer": 3
+                      "value": "1"
                     },
                     {
-                      "type": "class OpenTestStep extends AssignmentStep_1.AssignmentStep {\r\n    constructor() {\r\n        super();\r\n        this.correctAnswer = null;\r\n        this.resultType = String.toString();\r\n    }\r\n    /**\r\n     *\r\n     * @param {string} answer    answer\r\n     * @return {boolean}\r\n     */\r\n    isAnswerValid(answer) {\r\n        return /* equals */ ((o1, o2) => {\r\n            if (o1 && o1.equals) {\r\n                return o1.equals(o2);\r\n            }\r\n            else {\r\n                return o1 === o2;\r\n            }\r\n        })(this.correctAnswer.value, answer);\r\n    }\r\n}",
-                      "id": "exercise2",
+                      "type": "Bank.Key",
+                      "id": null,
                       "version": null,
-                      "maxGrade": 15,
-                      "possibleInterventions": null,
+                      "value": "2"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "3"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "4"
+                    }
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "type": "Entities.StudyStep",
+                  "id": "step22",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": null,
+                  "maxGrade": 0,
+                  "title": null,
+                  "materials": {
+                    "type": "Bank.HyperlinkMaterial",
+                    "id": null,
+                    "version": null,
+                    "link": "onenote:https://eduhseru-my.sharepoint.com/personal/aikolomiets_edu_hse_ru/Documents/Записные%20книжки%20для%20занятий/Testroom/_Библиотека%20содержимого/SectionGroup5/Т6.one#О%20светофорах%20Т.6&section-id={CAA62863-22AA-46F0-8DC9-0D89F4903618}&page-id={5C461093-D883-4458-83F2-BEAAAE5369C7}&end"
+                  }
+                },
+                {
+                  "type": "Entities.OpenTestStep",
+                  "id": "step23",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": "function String() { [native code] }",
+                  "maxGrade": 1,
+                  "title": null,
+                  "problem": {
+                    "type": "Bank.Assignment",
+                    "id": null,
+                    "version": null,
+                    "content": "<div style=\"left:50px;top:75px;width:250px\">Какой тип светофора изображен на рисунке?\n<img width=\"200px\" src=\"https://i.imgur.com/pGpZhvL.jpg\"></img>\n</div>"
+                  },
+                  "correctAnswer": {
+                    "type": "Bank.Key",
+                    "id": null,
+                    "version": null,
+                    "value": "транспортный"
+                  }
+                },
+                {
+                  "type": "Entities.TestStep",
+                  "id": "step24",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": "function Number() { [native code] }",
+                  "maxGrade": 2,
+                  "title": null,
+                  "problem": {
+                    "type": "Bank.Assignment",
+                    "id": null,
+                    "version": null,
+                    "content": "В местах, где движение регулируется, пешеходы должны руководствоваться в первую очередь сигналами "
+                  },
+                  "answers": [
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "регулировщика"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "транспортного светофора"
+                    },
+                    {
+                      "type": "Bank.Key",
+                      "id": null,
+                      "version": null,
+                      "value": "пешеходного светофора"
+                    }
+                  ],
+                  "correctAnswer": 0
+                },
+                {
+                  "type": "Entities.ControlStep",
+                  "id": "step25",
+                  "version": null,
+                  "possibleInterventions": [],
+                  "resultType": null,
+                  "maxGrade": 6,
+                  "title": null,
+                  "exercises": [
+                    {
+                      "type": "Entities.OpenTestStep",
+                      "id": "exercise21",
+                      "version": null,
+                      "possibleInterventions": [],
                       "resultType": "function String() { [native code] }",
+                      "maxGrade": 1,
+                      "title": null,
                       "problem": {
-                        "type": "class Assignment extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.content = null;\r\n    }\r\n}",
+                        "type": "Bank.Assignment",
                         "id": null,
                         "version": null,
-                        "content": "3 + 3 = ?"
+                        "content": "<div style=\"left:50px;top:75px;width:300px\">1. Светофор какого типа изображен на рисунке?\n  <img width=\"250\" src=\"https://arhivurokov.ru/multiurok/1/7/d/17dc7de6d066e259ca97319fa0183bc996409fa6/bukliet-pravila-dorozhnogho-dvizhieniia-v-zimnii-p_14.jpeg\"></img>\n  </div>"
                       },
                       "correctAnswer": {
-                        "type": "class Key extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.value = null;\r\n    }\r\n}",
+                        "type": "Bank.Key",
                         "id": null,
                         "version": null,
-                        "value": "6"
+                        "value": "Т.5"
+                      }
+                    },
+                    {
+                      "type": "Entities.PascaStep",
+                      "id": "exercise22",
+                      "version": null,
+                      "possibleInterventions": [],
+                      "resultType": "class PascaStepResult {\r\n    constructor() {\r\n        this.ArtifactUri = null;\r\n        this.FinalGrade = 0;\r\n        this.Grades = null;\r\n        this.Reviewers = null;\r\n    }\r\n}",
+                      "maxGrade": 5,
+                      "title": null,
+                      "pascaFalsSettings": {
+                        "authorsCountToBeginAssessment": 2,
+                        "delayDates": true
+                      },
+                      "pascaSessionSettings": {
+                        "sessionName": "Проект Светофоры"
+                      },
+                      "pascaOnenoteSettings": {
+                        "pascaSectionGroupName": "PASCA",
+                        "assignmentSectionName": "Assignment"
                       }
                     }
                   ]
                 }
-              ]
+              ],
+              "maxGrade": 10,
+              "minGrade": 5,
+              "possibleInterventions": [
+                {
+                  "type": "Entities.GotoModuleIntervention",
+                  "id": null,
+                  "version": null,
+                  "module": {
+                    "type": "Entities.Module",
+                    "id": "module1",
+                    "version": null,
+                    "steps": [
+                      {
+                        "type": "Entities.StudyStep",
+                        "id": "step01",
+                        "version": null,
+                        "possibleInterventions": [],
+                        "resultType": null,
+                        "maxGrade": 0,
+                        "title": null,
+                        "materials": {
+                          "type": "Bank.HypertextMaterial",
+                          "id": null,
+                          "version": null,
+                          "content": "<div>Приветствуем Вас на курсе ПДД 2018. Надеемся, вы узнаете много нового.</div>"
+                        }
+                      },
+                      {
+                        "type": "Entities.StudyStep",
+                        "id": "step02",
+                        "version": null,
+                        "possibleInterventions": [],
+                        "resultType": null,
+                        "maxGrade": 0,
+                        "title": null,
+                        "materials": {
+                          "type": "Bank.HyperlinkMaterial",
+                          "id": null,
+                          "version": null,
+                          "link": "https://pdde.ru/pdd/"
+                        }
+                      },
+                      {
+                        "type": "Entities.TestStep",
+                        "id": "step1",
+                        "version": null,
+                        "possibleInterventions": [
+                          {
+                            "type": "Entities.Hint",
+                            "id": null,
+                            "version": null,
+                            "message": "Действие знака 4.1.1 «Движение прямо», установленного перед перекрёстком, распространяется только на первое пересечение проезжих частей за знаком."
+                          }
+                        ],
+                        "resultType": "function Number() { [native code] }",
+                        "maxGrade": 1,
+                        "title": null,
+                        "problem": {
+                          "type": "Bank.Assignment",
+                          "id": null,
+                          "version": null,
+                          "content": "<div style=\"left:50px;top:75px;width:300px\">Вам можно продолжить движение на перекрёстке:\n  <img width=\"400px\" src=\"https://avto-russia.ru/pdd_abma1b1/images/pdd-15-02.jpg\"></img>\n  </div>"
+                        },
+                        "answers": [
+                          {
+                            "type": "Bank.Key",
+                            "id": null,
+                            "version": null,
+                            "value": "В направлениях Б и В"
+                          },
+                          {
+                            "type": "Bank.Key",
+                            "id": null,
+                            "version": null,
+                            "value": "Только в направлении Б"
+                          },
+                          {
+                            "type": "Bank.Key",
+                            "id": null,
+                            "version": null,
+                            "value": "В направлениях А и Б"
+                          }
+                        ],
+                        "correctAnswer": 2
+                      },
+                      {
+                        "type": "Entities.OpenTestStep",
+                        "id": "step12",
+                        "version": null,
+                        "possibleInterventions": [
+                          {
+                            "type": "Entities.Distinction",
+                            "id": null,
+                            "version": null,
+                            "message": "Лампа красного цвета располагается сверху, лампа зелёного цвета располагается снизу",
+                            "entity1": "красный",
+                            "entity2": "зелёный",
+                            "distinctor": null
+                          },
+                          {
+                            "type": "Entities.Hint",
+                            "id": null,
+                            "version": null,
+                            "message": "Цвет светофора может быть одним из трёх: красный, жёлтый или зелёный"
+                          }
+                        ],
+                        "resultType": "function String() { [native code] }",
+                        "maxGrade": 1,
+                        "title": null,
+                        "problem": {
+                          "type": "Bank.Assignment",
+                          "id": null,
+                          "version": null,
+                          "content": "Какой цвет светофора требует остановки?"
+                        },
+                        "correctAnswer": {
+                          "type": "Bank.Key",
+                          "id": null,
+                          "version": null,
+                          "value": "красный"
+                        }
+                      },
+                      {
+                        "type": "Entities.StudyStep",
+                        "id": "step2",
+                        "version": null,
+                        "possibleInterventions": [
+                          {
+                            "type": "Entities.GotoStepIntervention",
+                            "id": null,
+                            "version": null,
+                            "step": {
+                              "type": "Entities.ControlStep",
+                              "id": "step3",
+                              "version": null,
+                              "possibleInterventions": [],
+                              "resultType": null,
+                              "maxGrade": 3,
+                              "title": null,
+                              "exercises": [
+                                {
+                                  "type": "Entities.OpenTestStep",
+                                  "id": "exercise1",
+                                  "version": null,
+                                  "possibleInterventions": [],
+                                  "resultType": "function String() { [native code] }",
+                                  "maxGrade": 2,
+                                  "title": null,
+                                  "problem": {
+                                    "type": "Bank.Assignment",
+                                    "id": null,
+                                    "version": null,
+                                    "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
+                                  },
+                                  "correctAnswer": {
+                                    "type": "Bank.Key",
+                                    "id": null,
+                                    "version": null,
+                                    "value": "категория"
+                                  }
+                                },
+                                {
+                                  "type": "Entities.GeneratedTestStep",
+                                  "id": "exercise2",
+                                  "version": null,
+                                  "possibleInterventions": [],
+                                  "resultType": null,
+                                  "maxGrade": 1,
+                                  "title": null,
+                                  "objects": [
+                                    "Категория А",
+                                    "Категория А1",
+                                    "Категория В",
+                                    "Категория В1",
+                                    "Категория ВЕ"
+                                  ],
+                                  "batchSize": 5,
+                                  "question_type": 0,
+                                  "question_form": 1,
+                                  "features": [
+                                    "Тип ТС",
+                                    "Максимальная масса ТС",
+                                    "Минимальный возраст"
+                                  ],
+                                  "minGrade": 0.7
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "resultType": null,
+                        "maxGrade": 0,
+                        "title": "Изучение светофора",
+                        "materials": {
+                          "type": "Bank.HypertextMaterial",
+                          "id": null,
+                          "version": null,
+                          "content": "<div style=\"left:50px;top:75px;width:300px\">Светофо́р (от свет + греч. φορός «несущий») — оптическое устройство, подающее световые сигналы, регулирующие движение автомобильного, железнодорожного, водного и другого транспорта, а также пешеходов на пешеходных переходах\n    <img width=\"400px\" src=\"https://ds03.infourok.ru/uploads/ex/07e6/0005ad35-95e22fd3/1/img1.jpg\"></img></div>"
+                        }
+                      },
+                      {
+                        "type": "Entities.ControlStep",
+                        "id": "step3",
+                        "version": null,
+                        "possibleInterventions": [],
+                        "resultType": null,
+                        "maxGrade": 3,
+                        "title": null,
+                        "exercises": [
+                          {
+                            "type": "Entities.OpenTestStep",
+                            "id": "exercise1",
+                            "version": null,
+                            "possibleInterventions": [],
+                            "resultType": "function String() { [native code] }",
+                            "maxGrade": 2,
+                            "title": null,
+                            "problem": {
+                              "type": "Bank.Assignment",
+                              "id": null,
+                              "version": null,
+                              "content": "Единица деления всех транспортных средств по грузоподъемности, мощности двигателя, количеству колес и пассажирских мест - это?"
+                            },
+                            "correctAnswer": {
+                              "type": "Bank.Key",
+                              "id": null,
+                              "version": null,
+                              "value": "категория"
+                            }
+                          },
+                          {
+                            "type": "Entities.GeneratedTestStep",
+                            "id": "exercise2",
+                            "version": null,
+                            "possibleInterventions": [],
+                            "resultType": null,
+                            "maxGrade": 1,
+                            "title": null,
+                            "objects": [
+                              "Категория А",
+                              "Категория А1",
+                              "Категория В",
+                              "Категория В1",
+                              "Категория ВЕ"
+                            ],
+                            "batchSize": 5,
+                            "question_type": 0,
+                            "question_form": 1,
+                            "features": [
+                              "Тип ТС",
+                              "Максимальная масса ТС",
+                              "Минимальный возраст"
+                            ],
+                            "minGrade": 0.7
+                          }
+                        ]
+                      }
+                    ],
+                    "maxGrade": 5,
+                    "minGrade": 3,
+                    "possibleInterventions": [
+                      {
+                        "type": "Entities.RepeatIntervention",
+                        "id": null,
+                        "version": null
+                      }
+                    ],
+                    "title": "Основы ПДД",
+                    "description": "В этом модуле вы пройдете первые шаги в изучении ПДД"
+                  }
+                }
+              ],
+              "title": "Светофоры",
+              "description": "Детальное изучение светофоров"
             }
           }
         ],
+        "type": "Entities.Tree",
         "Value": null
       },
-      "title": "CourseB"
+      "title": "Металлы и сплавы"
     }
   ],
   "CourseStates": {
-    "studentA@gmail.com": [
-      {
-        "type": "class CourseState extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.course = null;\r\n        this.currentModule = null;\r\n        this.currentStep = null;\r\n        this.index = 0;\r\n        this.student = null;\r\n    }\r\n    /**\r\n     *\r\n     * @param {CourseState} other\r\n     * @return {boolean}\r\n     */\r\n    hasChanged(other) {\r\n        return (!super.equals(other) &&\r\n            !(this.student.equals(other.student) &&\r\n                this.course.equals(other.course) &&\r\n                this.currentModule.equals(other.currentModule) &&\r\n                this.currentStep.equals(other.currentStep)));\r\n    }\r\n}",
-        "id": null,
-        "version": null,
-        "course": {
-          "type": "class CourseWrapper extends Course_1.Course {\r\n    constructor() {\r\n        super();\r\n        this.IUrl = null;\r\n    }\r\n}",
+    "studentA@gmail.com": {
+      "SubStepAnswers": {},
+      "GeneratedSteps": {},
+      "Statistics": [],
+      "CourseStates": [
+        {
+          "type": "Entities.CourseState",
           "id": null,
           "version": null,
-          "description": null,
-          "modules": null,
-          "title": null,
-          "IUrl": "/course?courseId=0"
+          "unfinishedSteps": [],
+          "currentModule": null,
+          "course": {
+            "type": "Entities.Lazy.CourseWrapper",
+            "id": null,
+            "version": null,
+            "description": null,
+            "modules": null,
+            "title": null,
+            "IUrl": "/course?courseId=0"
+          },
+          "index": 0,
+          "currentStep": null,
+          "student": {
+            "displayName": "Иван Смирнов",
+            "email": "studentA@gmail.com"
+          },
+          "isCourseFinished": false,
+          "isModuleActive": false
         },
-        "currentModule": null,
-        "currentStep": null,
-        "index": 0,
-        "student": {
-          "displayName": "Иван Смирнов",
-          "email": "studentA@gmail.com"
-        }
-      },
-      {
-        "type": "class CourseState extends Entity_1.Entity {\r\n    constructor() {\r\n        super();\r\n        this.course = null;\r\n        this.currentModule = null;\r\n        this.currentStep = null;\r\n        this.index = 0;\r\n        this.student = null;\r\n    }\r\n    /**\r\n     *\r\n     * @param {CourseState} other\r\n     * @return {boolean}\r\n     */\r\n    hasChanged(other) {\r\n        return (!super.equals(other) &&\r\n            !(this.student.equals(other.student) &&\r\n                this.course.equals(other.course) &&\r\n                this.currentModule.equals(other.currentModule) &&\r\n                this.currentStep.equals(other.currentStep)));\r\n    }\r\n}",
-        "id": null,
-        "version": null,
-        "course": {
-          "type": "class CourseWrapper extends Course_1.Course {\r\n    constructor() {\r\n        super();\r\n        this.IUrl = null;\r\n    }\r\n}",
+        {
+          "type": "Entities.CourseState",
           "id": null,
           "version": null,
-          "description": null,
-          "modules": null,
-          "title": null,
-          "IUrl": "/course?courseId=1"
-        },
-        "currentModule": null,
-        "currentStep": null,
-        "index": 0,
-        "student": {
-          "displayName": "Иван Смирнов",
-          "email": "studentB@gmail.com"
+          "unfinishedSteps": [],
+          "currentModule": null,
+          "course": {
+            "type": "Entities.Lazy.CourseWrapper",
+            "id": null,
+            "version": null,
+            "description": null,
+            "modules": null,
+            "title": null,
+            "IUrl": "/course?courseId=1"
+          },
+          "index": 0,
+          "currentStep": null,
+          "student": {
+            "displayName": "Иван Смирнов",
+            "email": "studentB@gmail.com"
+          },
+          "isCourseFinished": false,
+          "isModuleActive": false
         }
+      ]
+    }
+  },
+  "HiddenSteps": {
+    "step3": [
+      {
+        "type": "Entities.TestStep",
+        "id": null,
+        "version": null,
+        "possibleInterventions": [],
+        "resultType": "function Number() { [native code] }",
+        "maxGrade": 1,
+        "title": null,
+        "problem": {
+          "type": "Bank.Assignment",
+          "id": null,
+          "version": null,
+          "content": "Максимальная величина штрафа за управление ТС без соответствующей категории прав -"
+        },
+        "answers": [
+          {
+            "type": "Bank.Key",
+            "id": null,
+            "version": null,
+            "value": "300.000р"
+          },
+          {
+            "type": "Bank.Key",
+            "id": null,
+            "version": null,
+            "value": "15.000р"
+          }
+        ],
+        "correctAnswer": 1
       }
     ]
   }

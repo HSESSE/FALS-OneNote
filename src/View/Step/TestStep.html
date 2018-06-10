@@ -1,9 +1,54 @@
 <div>
-    <textarea [ngModel]="Answer"></textarea>
-    <button class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20" (click)="tryProceed()">
-        <span class="ms-Button-label">Submit</span>
-        <span class="ms-Button-icon">
-            <i class="ms-Icon ms-Icon--ChevronRight"></i>
-        </span>
+    <div [innerHTML]="Problem|async"></div>
+    <div class="ms-MessageBanner" *ngIf="!!(Hint|async)">
+        <div class="ms-MessageBanner-content">
+            <div class="ms-MessageBanner-text">
+                <div class="ms-MessageBanner-clipper">
+                    {{Hint|async}}
+                </div>
+            </div>
+        </div>
+        <button class="ms-MessageBanner-close" (click)="clearHint()">
+            <i class="ms-Icon ms-Icon--Clear"></i>
+        </button>
+    </div>
+    <ul>
+        <ng-container *ngFor="let option of (Answers|async); let i=index">
+            <li [ngClass]="{
+                'ms-ListItem': true,
+                'is-selectable': true,
+                'is-selected': isSelected(i)       
+            }">
+                <span class="ms-ListItem-primaryText" style="white-space: normal;padding-right: 5px">{{option}}</span>
+                <div class="ms-ListItem-selectionTarget" (click)="toggle(i)"></div>
+            </li>
+        </ng-container>
+    </ul>
+
+    <button class="btn" [ngClass]="{
+        'btn-success': (state|async)==StateEnum.Correct,
+        'btn-danger': (state|async)==StateEnum.Wrong,
+        'btn-info': (state|async)==StateEnum.Loading||(state|async)==StateEnum.Default
+    }" style="color:white;margin-top:5px" (click)="tryProceed()" [disabled]="(state|async)==StateEnum.Correct||(state|async)==StateEnum.Loading||(DisableAnswer|async)">
+        <span class="ms-Button-label" style="color:white">{{((state|async)==StateEnum.Correct)?"Верно":"Отправить"}}</span>
     </button>
 </div>
+
+<mat-spinner style="margin-top:10px" *ngIf="IsLoading|async"></mat-spinner>
+
+<script type="text/javascript">
+    var TextFieldElements = document.querySelectorAll(".ms-TextField");
+    for (var i = 0; i < TextFieldElements.length; i++) {
+        new fabric['TextField'](TextFieldElements[i]);
+    }
+
+    var ListElements = document.querySelectorAll(".ms-List");
+    for (var i = 0; i < ListElements.length; i++) {
+        new fabric['List'](ListElements[i]);
+    }
+
+    var ListItemElements = document.querySelectorAll(".ms-ListItem");
+    for (var i = 0; i < ListItemElements.length; i++) {
+        new fabric['ListItem'](ListItemElements[i]);
+    }
+</script>

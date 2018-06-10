@@ -1,20 +1,44 @@
 /* Auto-generated file */
 
 import { Period, Type } from "Service/Fals/TypeMap";
+// var dictProto: any = <any>{};
+// dictProto.__proto__.putIfAbsent = function(child, node) {
+//   this[child] = this[child] || node;
+// };
+import { Serialize } from "../Serialization/Serialize";
 import { Entity } from "../Bank/Entity";
 import { StepInterventionModel } from "./StepInterventionModel";
 export abstract class Step extends Entity {
-  public maxGrade: number;
-
-  public possibleInterventions: StepInterventionModel[];
+  static __static_initialized: boolean = false;
+  static __static_initialize() {
+    if (!Step.__static_initialized) {
+      Step.__static_initialized = true;
+      Step.__static_initializer_0();
+    }
+  }
 
   public resultType: string;
 
+  public maxGrade: number;
+
+  public possibleInterventions: Array<StepInterventionModel> = <any>[];
+
+  public title: string;
+
+  static __static_initializer_0() {
+    Serialize.declare(
+      /* getName */ (c => (c["__class"] ? c["__class"] : c["name"]))(Step),
+      Step
+    );
+  }
+
   public constructor() {
     super();
-    this.maxGrade = 0;
-    this.possibleInterventions = null;
     this.resultType = null;
+    this.maxGrade = 0;
+    this.title = null;
   }
 }
 Step["__class"] = "Entities.Step";
+
+Step.__static_initialize();

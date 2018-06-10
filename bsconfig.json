@@ -5,10 +5,11 @@
     "server": {
         "baseDir": "dist",
         "routes": {
-            "/node_modules": "node_modules"
+            "/node_modules": "node_modules",
+            "/src": "src"
         }
     },
-    "https": false,
+    "https": true,
     "watch": true,
     "files": "dist/**/*"
 }
