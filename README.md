@@ -11,9 +11,10 @@ For localhost and browsersync:
 
 1) npm install
 2) \[optional\] npm run gen
-3) npm run createStorage
-4) npm run start
-5) npm run backend
+3) [1st console] npm run start
+3.5) wait "Compilation complete"
+4) [2nd console] npm run createStorage
+5) [2nd console] npm run backend
 
 For server setup a separate package.json, server.ts and possibly other files should be branched.
 
